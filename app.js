@@ -164,16 +164,16 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
       res.redirect('/login');
    } else {
       const url = request.originalUrl.split('/');
-      const pageNum = url.pop();
+      const pageNum = parseInt(url.pop());
       const mode = url.pop();
-      const numMode = config.getNumMode(mode);
+      // const numMode = config.getNumMode(mode);
       // console.log(isCheck);
       // console.log(mode);
       // console.log(pageNum);
       // console.log(numMode);
       const dataFilter = {
          'username': app.get(`username`),
-         'game_mode': numMode
+         'game_mode': config.getNumMode(mode)
       };
       if (!isCheck) {
          dataFilter['is_win'] = true;
@@ -183,23 +183,13 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
          .exec((err, games) => {
             if (err) throw err;
             var body = ``;
-            var navigationLinks = ``;
-            const header = `<thead id="stat_table_head">
-                        <tr>
-                        <th class="stat-rank-column">#</th>
-                        <th class="stat-time-column">Time</th>
-                        <th class="stat-state-column">Result</th>
-                        <th class="stat-3bv-extra-column">Clicks</th>
-                        <th class="" colspan="1">Date</th>
-                        </tr>
-                     </thead>`;
             const gamesNum = games.length;
             const totalPages = utils.getPage(gamesNum);
-            for (let index = 1; index <= totalPages; index++) {
-               navigationLinks = navigationLinks + `<li class="page ${index == pageNum ? `active` : ''}"><a href="/my-games/${mode}/${index}">${index}</a></li>`;
-            }
-            for (let i = 0; i < Math.min(gamesNum - 10 * (pageNum - 1), 10); i++) {
-               const tmpIndex = 10 * (pageNum - 1) + i;
+            const prevPage = pageNum != 1 ? pageNum - 1 : 1;
+            const nextPage = pageNum == totalPages ? totalPages : pageNum + 1;
+            const arrIndex = pageNum - 1;
+            for (let i = 0; i < Math.min(gamesNum - 10 * arrIndex, 10); i++) {
+               const tmpIndex = 10 * arrIndex + i;
                body = body + `
          <tr id="game_row_2437559956">
             <td>${tmpIndex + 1}</td>
@@ -209,17 +199,18 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
             <td class=""><span>${games[tmpIndex].date}</span></td>
          </tr>`;
             }
-            res.render('my_games', {
+            res.render('my_games/index', {
                'stylesheet': fileController.readFile('./static/styles-455.css'),
                'isLogin': true,
                'username': app.get('username'),
                'subtitle': 'My games',
-               'tableData': `<table id="stat_table" class="table table-bordered table-stat" style="width: 100%; opacity: 1;">` +
-                  header + `<tbody id="stat_table_body">` + body + ` </tbody></table>`,
-               'navigation': `<li class="first"><a href="/my-games/${mode}/1">&lt;&lt;</a></li><li class="prev"><a href="/my-games/${mode}/${pageNum != 1 ? pageNum - 1 : 1}">&lt;</a></li>` + navigationLinks + `
-            <li class="last"><a href="/my-games/${mode}/${pageNum == totalPages ? totalPages : pageNum + 1}">&gt;</a></li>
-            <li class="last"><a href="/my-games/${mode}/${totalPages}">&gt;&gt;</a></li>`,
-               'isCheck': isCheck ? 'checked' : ''
+               'tableData': body,
+               'isCheck': isCheck ? 'checked' : '',
+               'mode': mode,
+               'prevPage': prevPage,
+               'totalPages': totalPages,
+               'nextPage': nextPage,
+               'pageNum': pageNum
             });
          })
    }

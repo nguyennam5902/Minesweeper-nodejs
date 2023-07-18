@@ -1,0 +1,15 @@
+<li class="first">
+   <a href="/my-games/<%-mode%>/1">&lt;&lt;</a>
+</li>
+<li class="prev">
+   <a href="/my-games/<%-mode%>/<%-prevPage%>">&lt;</a>
+</li>`
+<% for (let index = 1; index <= totalPages; index++) {%>
+   <li class="page <%- index == pageNum ? `active` : '' %>"><a href="/my-games/<%-mode%>/<%-index%>"><%-index%></a></li>      
+<%  }%>
+<li class="next">
+   <a href="/my-games/<%-mode%>/<%-nextPage%>">&gt;</a>
+</li>
+<li class="last">
+   <a href="/my-games/<%-mode%>/<%-totalPages%>">&gt;&gt;</a>
+</li>

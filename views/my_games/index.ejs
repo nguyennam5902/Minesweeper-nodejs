@@ -1,4 +1,4 @@
-<%- include('layout_main_up.ejs'); %>
+<%- include('../layout_main_up.ejs'); %>
   <div class="page-block" id="M26" style="display: block;">
     <div class="pull-right">
       <span id="S32">
@@ -62,12 +62,25 @@
       <div id="R28" class="pull-right"></div>
       <div class="clearfix"></div>
     </div>
-    <%-tableData%>
-      <nav id="stat_pagination_nav">
-        <ul id="stat_pagination" class="pagination pagination-sm noselect">
-          <%-navigation%>
-        </ul>
-      </nav>
+    <table id="stat_table" class="table table-bordered table-stat" style="width: 100%; opacity: 1;">
+      <thead id="stat_table_head">
+        <tr>
+          <th class="stat-rank-column">#</th>
+          <th class="stat-time-column">Time</th>
+          <th class="stat-state-column">Result</th>
+          <th class="stat-3bv-extra-column">Clicks</th>
+          <th class="" colspan="1">Date</th>
+        </tr>
+      </thead>
+      <tbody id="stat_table_body"></tbody>
+      <%-tableData%>
+        </tbody>
+    </table>
+    <nav id="stat_pagination_nav">
+      <ul id="stat_pagination" class="pagination pagination-sm noselect">
+        <%-include('navigation.ejs');%>
+      </ul>
+    </nav>
   </div>
   <script>
     document.getElementById('is_all_games').onclick = function () {
@@ -78,4 +91,4 @@
       window.location.href = `/my-games/${mode}/1`;
     };
   </script>
-  <%- include('layout_main_down.ejs',{mode:-1}); %>
+  <%- include('../layout_main_down.ejs',{mode:-1}); %>
