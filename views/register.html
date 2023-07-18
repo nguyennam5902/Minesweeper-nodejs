@@ -1,0 +1,46 @@
+<div>
+   <div class="text-center" style="margin-bottom: 25px;font-size: large;">
+      <strong>Sign in with username and password</strong>
+   </div>
+   <form name ="form" action="/register" method="post" onsubmit="return checkpass()">
+      <div class="form-group row">
+         <div class="col-12">
+            <label class="col-2 col-form-label">Username</label>
+            <input autofocus type="text" class="form-control" placeholder="enter your username" required="true"
+               name="username">
+         </div>
+      </div>
+
+      <div class="form-group row">
+         <div class="col-12">
+            <label class="col-2 col-form-label">Password</label>
+            <input type="password" class="form-control" placeholder="enter your password" name="password"
+               required="true">
+         </div>
+      </div>
+
+      <div class="form-group row">
+         <div class="col-12">
+            <label class="col-2 col-form-label">Repeat Password</label>
+            <input type="password" class="form-control" placeholder="enter your password" name="repeatPassword"
+               required="true">
+         </div>
+      </div>
+
+      <div class="form-group text-center row m-t-10">
+         <div class="col-12">
+            <button type="submit" class="btn btn-info auth-free">Register</button>
+         </div>
+      </div>
+      <script type="text/javascript">
+         function checkpass() {
+            if (document.form.password.value != document.form.repeatPassword.value) {
+               alert('Password and Repeat Password does not match');
+               document.form.repeatPassword.focus();
+               return false;
+            }
+            return true;
+         }
+      </script>
+   </form>
+</div>

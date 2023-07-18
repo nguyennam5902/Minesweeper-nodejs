@@ -1,0 +1,221 @@
+<!-- MAIN CONTENT -->
+<!-- END MAIN CONTENT -->
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="main-content-corner">
+   <div id="V8"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="C39" class="page-block click-type-block"></div>
+<script src="/vendor-455.js"></script>
+<script src="/board.js"></script>
+<script src="/cell.js"></script>
+<script src="/config.js"></script>
+<script src="/en-455.js"></script>
+<script src="/randoms.js"></script>
+<script>
+   const game_mode = <%-mode %>;
+   const cellSize = getCellSize(game_mode);
+   const leftMineLED = document.getElementById('top_area_mines_100');
+   const middleMineLED = document.getElementById('top_area_mines_10');
+   const rightMineLED = document.getElementById('top_area_mines_1');
+   const leftTimeLED = document.getElementById('top_area_time_100');
+   const middleTimeLED = document.getElementById('top_area_time_10');
+   const rightTimeLED = document.getElementById('top_area_time_1');
+   const today = new Date();
+   const height = getHeightFromMode(game_mode);
+   const width = getWidthFromMode(game_mode);
+   const mines = getMinesFromMode(game_mode);
+   const gameBoard = makeNewBoard(height, width);
+   const answerBoard = makeNewBoard(height, width);
+   const face = document.getElementById('top_area_face');
+   const cells = document.getElementsByClassName('wrapper-table')[0].getElementsByClassName('cell');
+   var clicks = 0;
+   var firstClick = true;
+   var flags = 0;
+   var isEnd = false;
+   var isWin = false;
+   var openedCells = 0;
+   var roundTime = 0;
+   var timeloop = null;
+   face.addEventListener('mousedown', function (event) {
+      if (event.which == 1) {
+         face.className = 'top-area-face zoomable hd_top-area-face-lose hd_top-area-face-pressed';
+      } else if (event.which == 3) {
+         event.preventDefault();
+      }
+   });
+   face.addEventListener('mouseup', function (event) {
+      if (event.which == 1) {
+         clicks = 0;
+         firstClick = true;
+         flags = 0;
+         isEnd = false;
+         openedCells = 0;
+         roundTime = 0;
+         leftTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num0';
+         middleTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num0';
+         rightTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num0';
+         document.getElementsByClassName('result-block').item(0).className = 'result-block hide';
+         mineConvert(10);
+         clearInterval(timeloop);
+         face.className = 'top-area-face zoomable hd_top-area-face-unpressed';
+         for (let i = 0; i < cells.length; i++) {
+            cells.item(i).className = `cell ${cellSize} hd_closed`;
+         }
+         makeBoard(gameBoard, mines);
+         countMine(gameBoard, answerBoard);
+      } else if (event.which == 3) {
+         event.preventDefault();
+      }
+   });
+   makeBoard(gameBoard, mines);
+   countMine(gameBoard, answerBoard);
+   var startTime;
+   for (let index = 0; index < cells.length; index++) {
+      const cell = cells.item(index);
+      // LEFT MOUSE
+      cell.addEventListener('click', function (event) {
+         if (isEnd == false) {
+            clicks++;
+            if (firstClick == true) {
+               timeloop = setInterval(timeConvert, 1000);
+               startTime = event.timeStamp;
+            }
+            if (!cell.className.includes('hd_flag')) {
+               const i = parseInt(cell.getAttribute('data-y'));
+               const j = parseInt(cell.getAttribute('data-x'));
+               // Click on opened cell
+               if (cell.className.includes('hd_opened')) {
+                  const aroundCells = getAroundCells(height, width, i, j);
+                  var flagCells = 0;
+                  aroundCells.forEach(aroundCell => {
+                     const cell = getCell(i + aroundCell[0], j + aroundCell[1]);
+                     if (cell.className.includes('hd_flag')) {
+                        flagCells++;
+                     }
+                  });
+                  if (flagCells == answerBoard[i][j]) {
+                     for (let index = 0; index < aroundCells.length; index++) {
+                        const aroundCell = aroundCells[index];
+                        const tmpI = i + aroundCell[0];
+                        const tmpJ = j + aroundCell[1];
+                        const tmpCell = getCell(tmpI, tmpJ);
+                        if (!tmpCell.className.includes('hd_flag')) {
+                           if (gameBoard[tmpI][tmpJ] == 1) {
+                              tmpCell.className = `cell ${cellSize} hd_opened hd_type10`;
+                              face.className = 'top-area-face zoomable hd_top-area-face-lose';
+                              isEnd = true;
+                              submit(false, game_mode, clicks, event.timeStamp - startTime);
+                              clearTimeout(timeloop);
+                              break;
+                           } else {
+                              openCell(gameBoard, answerBoard, tmpI, tmpJ, cellSize);
+                              isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                           }
+                        }
+                     }
+                     if (isWin) {
+                        isEnd = true;
+                        submit(true, game_mode, clicks, event.timeStamp - startTime);
+                     }
+                  }
+               }
+               else {
+                  if (gameBoard[i][j] == 1) {
+                     if (firstClick == false) {
+                        cell.className = `cell ${cellSize} hd_opened hd_type10`;
+                        face.className = 'top-area-face zoomable hd_top-area-face-lose';
+                        isEnd = true;
+                        submit(false, game_mode, clicks, event.timeStamp - startTime);
+                        clearTimeout(timeloop);
+                     }
+                     else {
+                        while (true) {
+                           makeBoard(gameBoard, mines);
+                           if (gameBoard[i][j] == 0) {
+                              countMine(gameBoard, answerBoard);
+                              openCell(gameBoard, answerBoard, i, j, cellSize);
+                              break;
+                           }
+                        }
+                        iswin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                        if (isWin) {
+                           isEnd = true;
+                           submit(true, game_mode, clicks, event.timeStamp - startTime);
+                        }
+                     }
+                  } else {
+                     openCell(gameBoard, answerBoard, i, j, cellSize);
+                     isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                     if (isWin) {
+                        isEnd = true;
+                        submit(true, game_mode, clicks, event.timeStamp - startTime);
+                     }
+                  }
+                  firstClick = false;
+               }
+            }
+         } else {
+            clearTimeout(timeloop);
+         }
+      });
+      // RIGHT MOUSE
+      cell.addEventListener('contextmenu', function (event) {
+         event.preventDefault();
+         if (isEnd == false) {
+            if (firstClick == true) {
+               timeloop = setInterval(timeConvert, 1000);
+            }
+            if (!cell.className.includes('hd_opened')) {
+               if (cell.className.includes('hd_flag')) {
+                  cell.className = `cell ${cellSize} hd_closed`;
+                  flags--;
+               }
+               else {
+                  cell.className = `cell ${cellSize} hd_flag`;
+                  flags++;
+               }
+               if (mineConvert(mines - flags) == false) {
+                  cell.className = (cell.className == `cell ${cellSize} hd_closed`) ? `cell ${cellSize} hd_flag` : `cell ${cellSize} hd_closed`;
+               }
+               firstClick = false;
+            }
+            clicks++;
+         }
+      });
+   }
+   function timeConvert() {
+      if (roundTime < 999) {
+         roundTime++;
+         const left = Math.floor(roundTime / 100 % 10);
+         const middle = Math.floor(roundTime / 10 % 10);
+         const right = Math.floor(roundTime % 10);
+         leftTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num' + left;
+         middleTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num' + middle;
+         rightTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num' + right;
+      }
+   }
+   function mineConvert(remainMines) {
+      if (remainMines < 0) {
+         alert('OUT OF MINE :)');
+      } else {
+         const left = Math.floor(remainMines / 100 % 10);
+         const middle = Math.floor(remainMines / 10 % 10);
+         const right = Math.floor(remainMines % 10);
+         leftMineLED.className = 'top-area-num pull-left zoomable hd_top-area-num' + left;
+         middleMineLED.className = 'top-area-num pull-left zoomable hd_top-area-num' + middle;
+         rightMineLED.className = 'top-area-num pull-left zoomable hd_top-area-num' + right;
+      }
+      return remainMines >= 0;
+   }
+</script>
+<div class="selection_bubble_root" style="display: none;"></div>
+</body>
+
+</html>

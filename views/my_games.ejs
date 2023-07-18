@@ -1,0 +1,81 @@
+<%- include('layout_main_up.ejs'); %>
+  <div class="page-block" id="M26" style="display: block;">
+    <div class="pull-right">
+      <span id="S32">
+        <span class="dropdown">
+          <span id="season_dropdown" class="dropdown-toggle select-dropdown" data-toggle="dropdown">All time
+            <span class="caret"></span></span>
+          <ul id="season_dropdown_list" class="dropdown-menu">
+            <li><a href="javascript:void(0)">All time</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S91]</span> July 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S90]</span> June 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S89]</span> May 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S88]</span> April 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S87]</span> March 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S86]</span> February 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S85]</span> January 2023</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S84]</span> December 2022</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S83]</span> November 2022</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S82]</span> October 2022</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S81]</span> September 2022</a></li>
+            <li><a href="javascript:void(0)"><span class="season">[S80]</span> August 2022</a></li>
+            <li><a href="javascript:void(0)"><span class="blue">Next <i class="fa fa-long-arrow-right"></i></span></a>
+            </li>
+          </ul>
+        </span>
+      </span>
+    </div>
+    <div>
+      <div id="levels_full" class="pull-left hidden-xs level-select">
+        <a href="/my-games/beginner/1" id="level_select_1"
+          class="level-select-link active"><span>Beginner</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/my-games/intermediate/1" id="level_select_2"
+          class="level-select-link"><span>Intermediate</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/my-games/expert/1" id="level_select_3"
+          class="level-select-link"><span>Expert</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="javascript:void(0)" id="level_select_4"
+          class="level-select-link"><span>Custom</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="pull-left hidden-sm hidden-md hidden-lg level-select">
+        <div class="btn-group"><button type="button" class="btn btn-sm btn-default btn-level-select dropdown-toggle"
+            data-toggle="dropdown"><span>Beginner</span>&nbsp;<span class="caret"></span></button>
+          <ul id="levels_compact" class="dropdown-menu">
+            <li><a href="/my-games/beginner/1" id="level_select_1" class="level-select-link">Beginner</a>
+            </li>
+            <li><a href="/my-games/intermediate/1" id="level_select_2" class="level-select-link">Intermediate</a>
+            </li>
+            <li><a href="/my-games/expert/1" id="level_select_3" class="level-select-link">Expert</a></li>
+            <li><a href="javascript:void(0)" id="level_select_4" class="level-select-link">Custom</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="page-block" id="S59" style="display: block;">
+    <div id="stat_filters" class="stat-filters" style="width: 100%;">
+      <div id="is_all_games_wrapper" class="pull-left">
+        <label class="checkbox-fixed">
+          <input id="is_all_games" type="checkbox" <%-isCheck%> ><span>All games</span>
+        </label>
+      </div>
+      <div id="R28" class="pull-right"></div>
+      <div class="clearfix"></div>
+    </div>
+    <%-tableData%>
+      <nav id="stat_pagination_nav">
+        <ul id="stat_pagination" class="pagination pagination-sm noselect">
+          <%-navigation%>
+        </ul>
+      </nav>
+  </div>
+  <script>
+    document.getElementById('is_all_games').onclick = function () {
+      const params = window.location.pathname.split('/');
+      params.pop();
+      const mode = params.pop();
+      $.ajax({ url: '/all', type: 'POST', data: { 'mode': mode, 'isCheck': this.checked } });
+      window.location.href = `/my-games/${mode}/1`;
+    };
+  </script>
+  <%- include('layout_main_down.ejs',{mode:-1}); %>

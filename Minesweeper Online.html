@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Minesweeper Online</title>
+   <link rel="image_src" href="https://minesweeper.online/img/icons/og-image-300x300.png">
+   <link rel="stylesheet" href="./static/css">
+   <link href="./static/css2" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="./static/styles-455.css">
+   <link rel="icon" type="image/png" href="https://minesweeper.online/img/icons/favicon-32x32.png" sizes="32x32">
+   <link rel="icon" type="image/png" href="https://minesweeper.online/img/icons/android-chrome-192x192.png"
+      sizes="192x192">
+   <link rel="icon" type="image/png" href="https://minesweeper.online/img/icons/favicon-96x96.png" sizes="96x96">
+   <link rel="icon" type="image/png" href="https://minesweeper.online/img/icons/favicon-16x16.png" sizes="16x16">
+   <script type="text/javascript" async="" src="./static/js"></script>
+   <script type="text/javascript" async="" src="./static/analytics.js.download"></script>
+   <script>var Env = { env: 'production', version: '455', lang: 'en', langPrefix: '', screenMode: false }; var module = {};</script>
+   <script src="./static/js(1)"></script>
+</head>
+
+<body class="yay-hide">
+   <header id="header" class="header">
+      <div class="navbar-desktop hidden-xs hidden-sm">
+         <div class="container"><a class="brand-link pull-left" href="./Minesweeper Online.html">
+               <img class="brand-logo pull-left" src="./static/minesweeper-online.svg" alt="Minesweeper Online">
+               <div class="brand-text pull-left">Minesweeper Online</div>
+            </a>
+            <div class="auth-buttons pull-right"><button type="button" class="btn btn-success auth-free"
+                  onclick="S67.s47();">Sign up</button> <button type="button" class="btn btn-info auth-free"
+                  onclick="S66.s47();">Log in</button>
+            </div>
+         </div>
+      </div>
+      <nav class="navbar navbar-default hidden-md hidden-lg">
+         <div class="container-fluid">
+            <div class="navbar-header"><button type="button" class="navbar-toggle collapsed yay-toggle"><span
+                     class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a
+                  class="navbar-brand" href="https://minesweeper.online/">Minesweeper Online</a></div>
+         </div>
+      </nav>
+   </header>
+   <div class="yaybar yay-overlay yay-static yay-gestures yay-overlap-content">
+      <div class="nano">
+         <div class="nano-content">
+            <ul>
+               <li>
+                  <a class="yay-sub-toggle"><i class="fa fa-th"></i> Standard mode<span
+                        class="yay-collapse-icon fa fa-angle-down"></span></a>
+                  <ul>
+                     <li class="nav-menu-link link_new_game">
+                        <a href="https://minesweeper.online/new-game"><span class="fa fa-smile-o icon-menu"></span>New
+                           game</a>
+                     </li>
+                     <li class="nav-menu-link link_ranking">
+                        <a href="https://minesweeper.online/ranking"
+                           onclick="P41.n14('ranking', true, this);return false;">
+                           <span class="fa fa-th-list icon-menu"></span>Ranking</a>
+                     </li>
+                     <li class="nav-menu-link link_my_games">
+                        <a href="https://minesweeper.online/my-games"
+                           onclick="P41.n14('my-games', true, this);return false;">
+                           <span class="fa fa-table icon-menu">
+                           </span>My games</a>
+                     </li>
+                  </ul>
+               </li>
+               <li><a class="yay-sub-toggle"><i class="fa fa-graduation-cap"></i> No guessing mode
+                     <span class="yay-collapse-icon fa fa-angle-down"></span></a>
+                  <ul>
+                     <li class="nav-menu-link link_new_game_ng"><a href="https://minesweeper.online/new-game/ng"
+                           onclick="P41.e22('new-game/ng', this);return false;"><span
+                              class="fa fa-smile-o icon-menu"></span>New
+                           game</a></li>
+                     <li class="nav-menu-link link_ranking_ng"><a href="https://minesweeper.online/ranking/ng"
+                           onclick="P41.n14('ranking/ng', true, this);return false;"><span
+                              class="fa fa-th-list icon-menu"></span>Ranking</a></li>
+                     <li class="nav-menu-link link_my_games_ng"><a href="https://minesweeper.online/my-games/ng"
+                           onclick="P41.n14('my-games/ng', true, this);return false;"><span
+                              class="fa fa-table icon-menu"></span>My games</a></li>
+                  </ul>
+               </li>
+               <li><a class="yay-sub-toggle"><i class="fa fa-bar-chart"></i> Statistics<span
+                        class="yay-collapse-icon fa fa-angle-down"></span></a>
+                  <ul>
+                     <li class="nav-menu-link link_best_players"><a href="https://minesweeper.online/best-players"
+                           onclick="P41.n14('best-players', true, this);return false;"><span
+                              class="fa fa-trophy icon-menu"></span>Best players</a></li>
+                     <li class="nav-menu-link link_season_leaders"><a href="https://minesweeper.online/season-leaders"
+                           onclick="P41.n14('season-leaders', true, this);return false;"><span
+                              class="fa fa-trophy icon-menu"></span>Season leaders</a></li>
+                     <li class="nav-menu-link link_players_online"><a href="https://minesweeper.online/players-online"
+                           onclick="P41.n14('players-online', true, this);return false;"><span
+                              class="glyphicon glyphicon-eye-open icon-menu"></span>Players online<span
+                              class="menu_players_online"> (979)</span></a></li>
+                     <li class="nav-menu-link link_news"><a href="https://minesweeper.online/news"
+                           onclick="P41.n14('news', true, this);return false;"><span
+                              class="fa fa-newspaper-o icon-menu"></span>News</a></li>
+                     <li class="nav-menu-link link_statistics"><a href="https://minesweeper.online/statistics"
+                           onclick="P41.n14('statistics', true, this);return false;"><span
+                              class="fa fa-line-chart icon-menu"></span>Statistics</a></li>
+                  </ul>
+               </li>
+               <li class="nav-menu-link link_quests"><a href="https://minesweeper.online/quests"
+                     onclick="P41.n14('quests', true, this);return false;"><i class="fa fa-map-signs icon-menu"></i>
+                     Quests <span class="menu_quests_count">(9)</span></a></li>
+               <li class="nav-menu-link link_arena"><a href="https://minesweeper.online/arena"
+                     onclick="P41.n14('arena', true, this);return false;"><i
+                        class="glyphicon glyphicon-fire icon-menu icon-menu-up"></i> Arena <span
+                        class="menu_arena_count"></span></a></li>
+               <li class="nav-menu-link link_equipment"><a href="https://minesweeper.online/equipment"
+                     onclick="P41.n14('equipment', true, this);return false;"><i class="fa fa-cube icon-menu"></i>
+                     Equipment</a></li>
+               <li class="nav-menu-link link_market"><a href="https://minesweeper.online/marketplace"
+                     onclick="P41.n14('marketplace', true, this);return false;"><i
+                        class="fa fa-shopping-bag icon-menu"></i>
+                     Marketplace<span class="menu_market_new"></span><span class="menu_exchange_not_viewed"></span></a>
+               </li>
+               <li class="nav-menu-link link_events"><a href="https://minesweeper.online/events"
+                     onclick="P41.n14('events', true, this);return false;"><i class="fa fa-calendar icon-menu"></i>
+                     Events<span class="menu_events_new"><i class="fa fa-circle new-quest-icon"></i></span></a></li>
+               <li class="nav-menu-link link_my_profile profile-link" href="/player/3477102"><a
+                     href="javascript:void(0);" onclick="P41.n14('player/'+A45.u42.id, true, this);return false;"><i
+                        class="glyphicon glyphicon-user icon-menu icon-menu-up"></i> My profile</a></li>
+               <li class="nav-menu-link link_chat"><a href="https://minesweeper.online/chat"
+                     onclick="P41.n14('chat', true, this);return false;"><i
+                        class="glyphicon glyphicon-comment icon-menu icon-menu-up"></i> Chat <span
+                        class="menu_chat_count">(100+)</span></a></li>
+               <li class="nav-menu-link link_help"><a href="https://minesweeper.online/help/gameplay"
+                     onclick="P41.n14('help/gameplay', true, this);return false;"><i class="fa fa-book icon-menu"></i>
+                     Help</a></li>
+               <li class="nav-menu-link link_premium"><a href="https://minesweeper.online/premium"
+                     onclick="P41.n14('premium', true, this);return false;"><i class="fa fa-diamond icon-menu"></i>
+                     Premium account</a></li>
+               <li class="nav-menu-link link_shop"><a href="https://minesweeper.online/shop"
+                     onclick="P41.n14('shop', true, this);return false;"><i class="fa fa-shopping-cart icon-menu"></i>
+                     Shop<span class="new_shop_mark"></span></a></li>
+               <li class="nav-menu-link link_profile auth-required"><a href="https://minesweeper.online/profile"
+                     onclick="P41.n14('profile', true, this);return false;"><i class="fa fa-wrench icon-menu"></i>
+                     Account</a></li>
+               <li class="nav-menu-link link_logout auth-required"><a href="https://minesweeper.online/logout"
+                     onclick="P41.e22('logout', this);return false;"><i
+                        class="glyphicon glyphicon-log-out icon-menu"></i> Log
+                     out</a></li>
+               <li class="nav-menu-link link_sign_up auth-free hide"><a href="javascript:void(0);"
+                     onclick="S67.s47();M22.u7();"><i class="fa fa-user-plus icon-menu"></i> Sign up</a></li>
+               <li class="nav-menu-link link_sign_in auth-free hide"><a href="javascript:void(0);"
+                     onclick="S66.s47();M22.u7();"><i class="fa fa-sign-in icon-menu"></i> Log in</a></li>
+               <li id="mobile-theme-switcher" class="hide"></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="content-wrap">
+      <div id="M27" class="maintenance-line">&nbsp;</div>
+      <div class="container">
+         <div class="main-content">
+            <div>
+               <div class="pull-left left-column hidden-xs hidden-sm">
+                  <div class="sidebar-nav">
+                     <ul>
+                        <li>
+                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                              href="https://minesweeper.online/new-game" class="menu-link link_new_game"><span>Standard
+                                 mode</span></a>
+                        </li>
+                        <li>
+                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                              href="https://minesweeper.online/new-game/ng" class="menu-link link_new_game_ng"><span>No
+                                 guessing mode</span></a>
+                        </li>
+                        <li>
+                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                              href="https://minesweeper.online/ranking"
+                              class="menu-link link_ranking link_ranking_ng"><span>Ranking</span></a>
+                        </li>
+                        <li>
+                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                              href="https://minesweeper.online/my-games"
+                              class="menu-link link_my_games link_my_games_ng"
+                              onclick="P41.n14('my-games', true, this);return false;"><span>My games</span></a>
+                        </li>
+                     </ul>
+                     <ul>
+                        <li>
+                           <i class="fa fa-angle-double-right sub-nav-angle text-success"></i><a
+                              href="https://minesweeper.online/best-players" class="menu-link link_best_players"
+                              onclick="P41.n14('best-players', true, this);return false;"><span>Best players</span></a>
+                        </li>
+                        <li>
+                           <i class="fa fa-angle-double-right sub-nav-angle text-success"></i><a
+                              href="https://minesweeper.online/season-leaders" class="menu-link link_season_leaders"
+                              onclick="P41.n14('season-leaders', true, this);return false;"><span>Season
+                                 leaders</span></a>
+                        </li>
+                     </ul>
+                     <ul>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
+                              href="https://minesweeper.online/quests" class="menu-link link_quests"
+                              onclick="P41.n14('quests', true, this);return false;"><span>Quests <span
+                                    class="menu_quests_count">(9)</span></span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
+                              href="https://minesweeper.online/arena" class="menu-link link_arena"
+                              onclick="P41.n14('arena', true, this);return false;"><span>Arena</span></a><span
+                              class="menu_arena_new"></span></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
+                              href="https://minesweeper.online/equipment" class="menu-link link_equipment"
+                              onclick="P41.n14('equipment', true, this);return false;"><span>Equipment</span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
+                              href="https://minesweeper.online/marketplace" class="menu-link link_market"
+                              onclick="P41.n14('marketplace', true, this);return false;"><span>Marketplace<span
+                                    class="menu_market_new"></span><span
+                                    class="menu_exchange_not_viewed"></span></span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
+                              href="https://minesweeper.online/events" class="menu-link link_events"
+                              onclick="P41.n14('events', true, this);return false;"><span>Events</span><span
+                                 class="menu_events_new"><i class="fa fa-circle new-quest-icon"></i></span></a></li>
+                     </ul>
+                     <ul>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/players-online" class="menu-link link_players_online"
+                              onclick="P41.n14('players-online', true, this);return false;"><span>Players
+                                 online</span><span class="menu_players_online"> (979)</span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/news" class="menu-link link_news"
+                              onclick="P41.n14('news', true, this);return false;"><span>News</span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/statistics" class="menu-link link_statistics"
+                              onclick="P41.n14('statistics', true, this);return false;"><span>Statistics</span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/player/3477102"
+                              class="menu-link profile-link link_my_profile"
+                              onclick="P41.n14('player/'+A45.u42.id, true, this);return false;"><span>My
+                                 profile</span></a></li>
+                     </ul>
+                     <ul>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/chat" class="menu-link link_chat"
+                              onclick="P41.n14('chat', true, this);return false;"><span>Chat
+                                 <span class="menu_chat_count">(100+)</span></span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/help/gameplay" class="menu-link link_help"
+                              onclick="P41.n14('help/gameplay', true, this);return false;"><span>Help</span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/premium" class="menu-link link_premium"
+                              onclick="P41.n14('premium', true, this);return false;"><span>Premium
+                                 account</span></a></li>
+                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a
+                              href="https://minesweeper.online/shop" class="menu-link link_shop"
+                              onclick="P41.n14('shop', true, this);return false;"><span>Shop<span
+                                    class="new_shop_mark"></span></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="pull-left main-column">
+                  <div id="main_page" class="main-page">
+                     <div id="seo"></div>
+                     <div id="B14"></div>
+                     <div id="homepage">
+                        <h2 class="homepage-h2">Start new game</h2>
+                        <hr class="homepage-hr">
+                        <div class="homepage-levels">
+                           <div class="homepage-level-1 pull-left"><a href="https://minesweeper.online/start/1"
+                                 onclick="P41.e22('start/1', this);return false;"
+                                 class="thumbnail no-underline level1-link">
+                                 <div class="homepage-level-title">Beginner</div><img src="./static/beginner.png"
+                                    alt="Beginner">
+                              </a></div>
+                           <div class="homepage-level-2 pull-left"><a href="https://minesweeper.online/start/2"
+                                 onclick="P41.e22('start/2', this);return false;"
+                                 class="thumbnail no-underline level2-link">
+                                 <div class="homepage-level-title">Intermediate</div><img
+                                    src="./static/intermediate.png" alt="Intermediate">
+                              </a></div>
+                           <div class="homepage-level-3 pull-left"><a href="https://minesweeper.online/start/3"
+                                 onclick="P41.e22('start/3', this);return false;"
+                                 class="thumbnail no-underline level3-link">
+                                 <div class="homepage-level-title">Expert</div><img src="./static/expert.png"
+                                    alt="Expert">
+                              </a></div>
+                           <div class="clearfix"></div>
+                        </div>
+                        <h2 class="homepage-h2">Rules</h2>
+                        <hr class="homepage-hr">
+                        <p class="homepage-text">Minesweeper rules are very simple. The board is divided into cells,
+                           with mines randomly distributed. To win, you need to open all the cells. The number on a cell
+                           shows the number of mines adjacent to it. Using this information, you can determine cells
+                           that are safe, and cells that contain mines. Cells suspected of being mines can be marked
+                           with a flag using the right mouse button.</p>
+                        <p>Read more:&nbsp; <a href="https://minesweeper.online/help/gameplay" class="text-nowrap"><i
+                                 class="fa fa-book icon-book"></i>Gameplay</a>&nbsp;&nbsp; <a
+                              href="https://minesweeper.online/help/patterns" class="text-nowrap"><i
+                                 class="fa fa-book icon-book"></i>Patterns</a>&nbsp;&nbsp; <a
+                              href="https://minesweeper.online/help/efficiency" class="text-nowrap"><i
+                                 class="fa fa-book icon-book"></i>Efficiency</a>&nbsp;&nbsp;</p><br>
+                        <h2 class="homepage-h2">Various playing styles</h2>
+                        <hr class="homepage-hr">
+                        <p class="homepage-text">Despite the simple rules, there are many ways to play minesweeper.
+                           There is something for everyone: play to be the fastest, try to complete the most difficult
+                           boards, or just enjoy the logic. There are leaderboards for many different categories.</p>
+                        <div>
+                           <div class="pull-left homepage-best-players">
+                              <h3 class="homepage-h3">Best players</h3>
+                              <table class="table table-bordered width-auto">
+                                 <thead>
+                                    <tr>
+                                       <th class="homepage-best-players-th">Category</th>
+                                       <th class="homepage-best-players-th">Player</th>
+                                       <th class="homepage-best-players-th">Best result</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td class="text-nowrap">Trophies <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="Trophies are awarded for the best result in 10 main categories"></i>
+                                       </td>
+                                       <td class="text-nowrap"><img src="./static/kr.png" class="player-flag help"
+                                             data-toggle="tooltip" data-country="KR" title=""
+                                             data-original-title="South Korea"><a
+                                             href="https://minesweeper.online/player/4173336">sky high</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/best-players"
+                                             class="black-link"><i
+                                                class="fa fa-trophy score-icon icon-small"></i>1169</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Time <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="The fastest time is recorded for each level, but only the best result is used for scoring"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/1782682"><img
+                                                src="./static/cn.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="CN" title="" data-original-title="China">JZE</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/game/802792005"
+                                             class="black-link"><i
+                                                class="fa fa-clock-o time-icon icon-small icon-left level3"></i>29.461</a>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Experience <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title="" data-original-title="Experience gained"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/4173336"><img
+                                                src="./static/kr.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="KR" title="" data-original-title="South Korea">sky
+                                             high</a></td>
+                                       <td class="text-nowrap"><i
+                                             class="glyphicon glyphicon-star exp-icon icon-small"></i>146.7M
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Equipment <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title="" data-original-title="Equipment quality"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/3272994"><img
+                                                src="./static/sg.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="SG" title="" data-original-title="Singapore">gramana</a>
+                                       </td>
+                                       <td class="text-nowrap"><img src="./static/eq.svg" class="eq-icon"> L38</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Mastery <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="Mastery is calculated as the number of wins out of 100 consecutive games"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/3077130"><img
+                                                src="./static/de.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="DE" title="" data-original-title="Germany">PattuX</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/mastery/2368496622"
+                                             class="black-link"><i
+                                                class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>57</a>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Win streak <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="Win streak is a consecutive sequence of won games"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/3725138"><img
+                                                src="./static/cn.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="CN" title="" data-original-title="China">Courier</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/winstreak/1132686492"
+                                             class="black-link"><i
+                                                class="fa fa-crosshairs ws-icon icon-small ws3"></i>16</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Arena <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title="" data-original-title="Arena points"></i></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/4173336"><img
+                                                src="./static/kr.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="KR" title="" data-original-title="South Korea">sky
+                                             high</a></td>
+                                       <td class="text-nowrap"><img src="./static/arena.svg"
+                                             class="arena-icon icon-small">80E</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Difficulty <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="Difficulty of a map depends on the average time needed to complete it. For example, if you solve a map of the difficulty level equal to 500 in an hour, you'll probably need 10 times more time — namely, 10 hours — to finish a map of level 5000."></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/14659886"><img
+                                                src="./static/mk.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="MK" title="" data-original-title="Macedonia">Mufasa</a>
+                                       </td>
+                                       <td class="text-nowrap"><img src="./static/skull.svg" class="diff-icon"> <a
+                                             href="https://minesweeper.online/game/2428400602"
+                                             class="black-link">4.2M</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Endurance <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="Endurance is the minimum amount of time taken to win 100 games within 24 hours"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/4173336"><img
+                                                src="./static/kr.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="KR" title="" data-original-title="South Korea">sky
+                                             high</a></td>
+                                       <td class="text-nowrap"><i
+                                             class="fa fa-history end-icon icon-small end3"></i>2:45</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap">Wins <i class="fa fa-question-circle-o blue help"
+                                             data-toggle="tooltip" title=""
+                                             data-original-title="The total number of wins"></i></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/5424874"><img
+                                                src="./static/gs.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="GS" title=""
+                                                data-original-title="South Georgia &amp; South Sandwich Islands">Royston</a>
+                                       </td>
+                                       <td class="text-nowrap"><i class="fa fa-flag wins-icon icon-small"></i>533K</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="pull-left">
+                              <h3 class="homepage-h3">Season leaders</h3>
+                              <table class="table table-bordered width-auto">
+                                 <thead>
+                                    <tr>
+                                       <th class="homepage-best-players-th hidden-sm hidden-md hidden-lg">Category</th>
+                                       <th class="homepage-best-players-th">Player</th>
+                                       <th class="homepage-best-players-th">Best result</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Trophies <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Trophies are awarded for the best result in 10 main categories"></i>
+                                       </td>
+                                       <td class="text-nowrap"><img src="./static/il.png" class="player-flag help"
+                                             data-toggle="tooltip" data-country="IL" title=""
+                                             data-original-title="Israel"><a
+                                             href="https://minesweeper.online/player/6515688">NO explosions</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/season-leaders"
+                                             class="black-link"><i
+                                                class="fa fa-trophy score-icon icon-small icon-silver"></i>923</a>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Time <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="The fastest time is recorded for each level, but only the best result is used for scoring"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/1782682"><img
+                                                src="./static/cn.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="CN" title="" data-original-title="China">JZE</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/game/2408599764"
+                                             class="black-link"><i
+                                                class="fa fa-clock-o time-icon icon-small icon-left level3"></i>33.803</a>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Experience <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Experience gained"></i></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/3039734"><img
+                                                src="./static/us.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="US" title=""
+                                                data-original-title="United States">PurgeLight</a></td>
+                                       <td class="text-nowrap"><i
+                                             class="glyphicon glyphicon-star exp-icon icon-small"></i>1.9M</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Equipment <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Equipment quality"></i></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/14659886"><img
+                                                src="./static/mk.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="MK" title="" data-original-title="Macedonia">Mufasa</a>
+                                       </td>
+                                       <td class="text-nowrap"><i class="fa fa-circle coin-icon icon-small"></i>10.6M
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Mastery <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Mastery is calculated as the number of wins out of 100 consecutive games"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/3602486"><img
+                                                src="./static/us.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="US" title="" data-original-title="United States">TEAM
+                                             WORM</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/mastery/2408290854"
+                                             class="black-link"><i
+                                                class="glyphicon glyphicon-flash mastery-icon icon-small mastery2"></i>91</a>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Win streak <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Win streak is a consecutive sequence of won games"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/3602486"><img
+                                                src="./static/us.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="US" title="" data-original-title="United States">TEAM
+                                             WORM</a></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/winstreak/2408009160"
+                                             class="black-link"><i
+                                                class="fa fa-crosshairs ws-icon icon-small ws2"></i>45</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Arena <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Arena points"></i></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/8571914"><img
+                                                src="./static/de.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="DE" title="" data-original-title="Germany">MOsweeper</a>
+                                       </td>
+                                       <td class="text-nowrap"><img src="./static/arena.svg"
+                                             class="arena-icon icon-small">59</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Difficulty <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Difficulty of a map depends on the average time needed to complete it. For example, if you solve a map of the difficulty level equal to 500 in an hour, you'll probably need 10 times more time — namely, 10 hours — to finish a map of level 5000."></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/14659886"><img
+                                                src="./static/mk.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="MK" title="" data-original-title="Macedonia">Mufasa</a>
+                                       </td>
+                                       <td class="text-nowrap"><img src="./static/skull.svg" class="diff-icon"> <a
+                                             href="https://minesweeper.online/game/2428400602"
+                                             class="black-link">4.2M</a></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Endurance <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="Endurance is the minimum amount of time taken to win 100 games within 24 hours"></i>
+                                       </td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/6878391"><img
+                                                src="./static/xx.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="XX" title="" data-original-title="Unknown">あああああ🌸~</a>
+                                       </td>
+                                       <td class="text-nowrap"><i
+                                             class="fa fa-history end-icon icon-small end3"></i>4:22</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="text-nowrap hidden-sm hidden-md hidden-lg">Wins <i
+                                             class="fa fa-question-circle-o blue help" data-toggle="tooltip" title=""
+                                             data-original-title="The total number of wins"></i></td>
+                                       <td class="text-nowrap"><a href="https://minesweeper.online/player/5125360"><img
+                                                src="./static/fi.png" class="player-flag help" data-toggle="tooltip"
+                                                data-country="FI" title="" data-original-title="Finland">Buckethead5</a>
+                                       </td>
+                                       <td class="text-nowrap"><i class="fa fa-flag wins-icon icon-small"></i>20K</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="clearfix"></div>
+                        </div><br>
+                        <h2 class="homepage-h2">Minesweeper has never been so fun</h2>
+                        <hr class="homepage-hr">
+                        <ul>
+                           <li>Complete custom daily <a href="https://minesweeper.online/quests">quests</a></li>
+                           <li>Challenge yourself in the <a href="https://minesweeper.online/arena">arena</a></li>
+                           <li>Collect resources to get <a href="https://minesweeper.online/equipment">equipment</a>
+                           </li>
+                           <li>Trade in-game items on the <a
+                                 href="https://minesweeper.online/marketplace">marketplace</a></li>
+                           <li>Participate in special monthly <a href="https://minesweeper.online/events">events</a>
+                           </li>
+                        </ul><br><a href="https://minesweeper.online/new-game"
+                           class="btn btn-primary btn-play-for-free">Play for free</a><br><br><br>
+                        <div class="hidden-md hidden-lg text-right">
+                           <hr class="homepage-hr"><a href="https://minesweeper.online/privacy-policy"
+                              class="darkgray">Privacy Policy</a><br><br>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+            <div class="main-content-corner">
+               <div id="V8"></div>
+            </div>
+         </div>
+         <footer class="hidden-xs hidden-sm">
+            <noindex>
+               <div class="robots-nocontent socials">
+                  <div class="pull-left" style="margin-right: 15px;"></div>
+                  <div class="pull-right"><a href="https://minesweeper.online/privacy-policy" target="_blank">Privacy
+                        Policy</a> <span class="footer-hr support-to-hide" style="display: none;">|</span> <a
+                        href="mailto:support@minesweeper.online" class="support-to-hide"
+                        style="display: none;">support@minesweeper.online</a></div>
+                  <div class="clearfix"></div>
+               </div>
+            </noindex>
+         </footer>
+      </div>
+   </div>
+   <div id="C39" class="page-block click-type-block"></div>
+   <div class="sticky-ad hide" id="sticky_ad">
+      <div class="sticky-ad-content">
+         <div class="sticky-ad-content-left pull-left">
+            <div id="sticky_ad_content"></div>
+         </div>
+         <div class="sticky-ad-content-right pull-left"><a href="javascript:void(0)" onclick="P112.c175();"><i
+                  class="glyphicon glyphicon-remove-circle sticky-ad-close"></i></a></div>
+         <div class="clearfix"></div>
+      </div>
+   </div>
+   <script src="./static/vendor-455.js.download"></script>
+   <script src="./static/en-455.js.download"></script>
+   <div class="selection_bubble_root" style="display: none;"></div>
+</body>
+
+</html>
