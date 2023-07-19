@@ -1,0 +1,656 @@
+<%- include('../layout_main_up'); %>
+   <div class="page-block" id="H22" style="display: block;">
+      <h1><i class="fa fa-book"></i> Trophies</h1>
+      <hr>
+      <div class="hidden-sm hidden-md hidden-lg help-menu">
+         <div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/gameplay">Gameplay</a>
+            </div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/patterns">Patterns</a>
+            </div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                  href="/help/efficiency">Efficiency</a></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><strong>Trophies</strong></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/arena">Arena</a></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/gems">Gems</a></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                  href="/help/equipment">Equipment</a></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/events">Events</a>
+            </div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                  href="/help/achievements">Achievements</a></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/ranks">Ranks</a></div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/guides">Guides</a>
+            </div>
+            <div class="help-menu-item text-nowrap"><i
+                  class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/help/website-rules">Website
+                  rules</a></div>
+         </div>
+         <hr>
+      </div>
+      <table class="help-table">
+         <tbody>
+            <tr>
+               <%-include('left');%>
+                  <td class="help-table-middle-column hidden-xs help-menu"></td>
+                  <td id="help_content" class="help-table-right-column help-content">
+                     <div id="T8">
+                        <p><b>Trophies</b> are awarded for the best result in <b>10</b> main categories:</p>
+                        <table class="table table-bordered width-auto">
+                           <tbody>
+                              <tr>
+                                 <th>Category</th>
+                                 <th>Description</th>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><i class="fa fa-clock-o time-icon icon-small level1"></i>Time
+                                 </td>
+                                 <td>
+                                    The fastest time is recorded for each level, but only the best result is used for
+                                    scoring.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><i
+                                       class="glyphicon glyphicon-star exp-icon icon-small"></i>Experience</td>
+                                 <td>
+                                    Experience gained.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><img src="/eq.svg" class="eq-icon"> Equipment</td>
+                                 <td>
+                                    <a href="/help/equipment">Equipment</a> quality.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><i
+                                       class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>Mastery
+                                 </td>
+                                 <td>
+                                    Mastery is calculated as the number of wins out of 100 consecutive games for
+                                    beginner,
+                                    intermediate or expert difficulty. Mastery is calculated for each difficulty, but
+                                    only
+                                    the best result is used for scoring.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><i class="fa fa-crosshairs ws-icon icon-small ws2"></i>Win
+                                    streak
+                                 </td>
+                                 <td>
+                                    Win streak is a consecutive sequence of won games for beginner, intermediate or
+                                    expert
+                                    difficulty. Win streak is calculated for each difficulty, but only the best result
+                                    is
+                                    used for scoring.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><img src="/arena.svg" class="arena-icon icon-small">Arena</td>
+                                 <td>
+                                    <a href="/help/arena">Arena</a> points.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><img src="/skull.svg" class="diff-icon"> Difficulty</td>
+                                 <td>
+                                    Maximum difficulty solved. The difficulty of the map can be seen by hovering over
+                                    the
+                                    icon&nbsp;<i class="glyphicon glyphicon-info-sign gray"
+                                       aria-hidden="true"></i>&nbsp;when choosing custom board size.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><i class="fa fa-history end-icon icon-small end1"></i>Endurance
+                                 </td>
+                                 <td>
+                                    Endurance is the minimum amount of time taken to win 100 games within 24 hours for
+                                    beginner, intermediate or expert difficulty. Endurance is calculated for each
+                                    difficulty, but only the best result is used for scoring.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><i class="fa fa-flag wins-icon icon-small"></i>Wins</td>
+                                 <td>
+                                    The total number of wins.
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="text-nowrap"><img src="/reward.svg"
+                                       class="reward-icon icon-small">Achievements</td>
+                                 <td>
+                                    Number of <a href="/help/achievements">achievements</a>.
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <br>
+                        <div id="scores_table">
+                           <div><label class="checkbox-fixed"><input id="step"
+                                    type="checkbox"><span>Details</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                 class="dropdown"><span id="level_dropdown" class="dropdown-toggle select-dropdown"
+                                    data-toggle="dropdown">Level: Expert<span class="caret"></span></span>
+                                 <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)">Beginner</a></li>
+                                    <li><a href="javascript:void(0)">Intermediate</a></li>
+                                    <li><a href="javascript:void(0)">Expert</a></li>
+                                 </ul>
+                              </span></div>
+                           <table class="table table-bordered width-auto">
+                              <thead>
+                                 <tr>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Trophies"><i
+                                             class="fa fa-trophy score-icon  icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title="" data-original-title="Time"><i
+                                             class="fa fa-clock-o time-icon icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Experience"><i
+                                             class="glyphicon glyphicon-star exp-icon icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Equipment quality"><img src="/eq.svg"
+                                             class="quality-icon icon-title"></span></th>
+                                    <th class="text-center"><span class="help" title="" data-original-title="Mastery"><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Win streak"><i
+                                             class="fa fa-crosshairs ws-icon icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Arena points"><img src="/arena.svg"
+                                             class="arena-icon icon-title" alt="Arena"></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Difficulty"><img src="/skull.svg"
+                                             class="diff-icon icon-title" alt="💀"></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Endurance"><i
+                                             class="fa fa-history end-icon icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title="" data-original-title="Wins"><i
+                                             class="fa fa-flag wins-icon icon-title"></i></span></th>
+                                    <th class="text-center"><span class="help" title=""
+                                          data-original-title="Achievements"><img src="/reward.svg"
+                                             class="reward-icon icon-title" alt="Achievement"></span></th>
+                                 </tr>
+                              </thead>
+                              <tbody id="scores_body">
+                                 <tr>
+                                    <td class="text-center text-nowrap">150<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>30</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>100M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>100%</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">140<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>35</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>50M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>90%</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">130<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>40</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>20M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>80%</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">120<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>50</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>10M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>70%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>50
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>10</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">110<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>60</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>5M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>60%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>45
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>8</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">100<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>70</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>2M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>50%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>40
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>7</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">80</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 100K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end3"></i>5h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>100K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">20
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">90<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>80</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>1M</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>40%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>35
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>6</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">65</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 50K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end3"></i>24h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>50K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">18
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">80<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>90</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>500K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>35%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>30
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>5</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">50</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 20K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end2"></i>2h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>20K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">16
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">70<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>100</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>200K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>30%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>25
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">40</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 10K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end2"></i>5h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>10K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">14
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">60<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>120</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>100K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>25%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>20
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>4</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">30</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 5K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end2"></i>24h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>5K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">12
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">50<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>150</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>50K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>20%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>15
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">20</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 2K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end1"></i>1h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>2K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">10
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">40<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>200</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>20K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>15%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i
+                                             class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>10
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>3</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">10</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/skull.svg" class="diff-icon " alt="💀"> 1K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-history end-icon icon-small end1"></i>24h</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>1K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">8
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">30<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>300</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>10K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>10%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>5
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-crosshairs ws-icon icon-small ws3"></i>2</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">5</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>500</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">6
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">20<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>599</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>5K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>5%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>3
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">3</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>100</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">4
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="text-center text-nowrap">10<i
+                                          class="fa fa-trophy score-icon  icon-small icon-right"></i></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-clock-o time-icon icon-small level3"></i>1497</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-star exp-icon icon-small"></i>1K</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr>1%</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><i class="glyphicon glyphicon-flash mastery-icon icon-small mastery3"></i>2
+                                       </nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><img src="/arena.svg" class="arena-icon icon-small" alt="Arena">1</nobr>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                       <nobr><i class="fa fa-flag wins-icon icon-small"></i>10</nobr>
+                                    </td>
+                                    <td class="text-center">
+                                       <nobr><img src="/reward.svg" class="reward-icon icon-small" alt="Achievement">2
+                                       </nobr>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <%- include('../layout_main_down',{mode:-1}); %>

@@ -1,0 +1,11 @@
+<td class="help-table-left-column hidden-xs help-menu">
+   <div>
+      <% for(let i = 0; i < titles.length; i++){ const title= titles[i]; if (title.toLowerCase().replace(' ', '-') == route) { %>
+         <div class="help-menu-item text-nowrap"><strong><%-title%></strong></div>
+      <%} else {%>
+         <div class="help-menu-item text-nowrap">
+            <a href="/help/<%-title.toLowerCase().replace(' ', '-')%>"><%-title%></a>
+         </div>
+      <%}} %>
+   </div>
+</td>

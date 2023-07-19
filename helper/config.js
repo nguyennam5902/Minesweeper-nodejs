@@ -9,6 +9,19 @@ const modeToNumMap = {};
 modeToNumMap[BEGINNER] = BEGINNER_MODE;
 modeToNumMap[INTERMEDIATE] = INTERMEDIATE_MODE;
 modeToNumMap[EXPERT] = EXPERT_MODE;
+const HELP_TITLES = [
+   'Gameplay',
+   'Patterns',
+   'Trophies',
+   'Arena',
+   'Gems',
+   'Equipment',
+   'Events',
+   'Achievements',
+   'Ranks',
+   'Guides',
+   'Website rules',
+]
 
 /**
  * Return mode index in config file
@@ -27,5 +40,6 @@ module.exports = {
    INTERMEDIATE_MODE,
    EXPERT_MODE,
    CUSTOM_MODE,
+   HELP_TITLES,
    getNumMode
 };

@@ -1,0 +1,1173 @@
+<%- include('../layout_main_up.ejs'); %>
+   <div class="page-block" id="H22" style="display: block;">
+      <h1><i class="fa fa-book"></i> Patterns</h1>
+      <hr>
+      <table class="help-table">
+         <tbody>
+            <tr>
+               <%- include('left.ejs');%>
+               <td class="help-table-middle-column hidden-xs help-menu"></td>
+               <td id="help_content" class="help-table-right-column help-content">
+                  <div id="P35">
+                     <p>
+                        <b>A pattern</b>&nbsp;is a common arrangement of numbers that has only one solution. If you
+                        memorise a pattern it will reduce the amount of time you use thinking.
+                     </p>
+                     <h3>Basic patterns</h3>
+                     <table class="table table-bordered patterns-table">
+                        <tbody>
+                           <tr>
+                              <td id="patterns_img_b1" class="help-pattern-image"><img src="/2.png"
+                                    class="cursor-pointer" alt="b1 (2)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_b1" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_b1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_b1" href="#b1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Easy">E</span></div><a name="b1"
+                                       class="pattern-anchor"></a>B1
+                                 </h4>
+                                 <ul id="patterns_steps_b1">
+                                    <li class="cursor-pointer" style="opacity: 1;">If a number is touching the same
+                                       number
+                                       of cells,</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">then these cells are all mines.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_b2" class="help-pattern-image"><img src="/2.png"
+                                    class="cursor-pointer" alt="b2 (2)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_b2" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_b2" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_b2" href="#b2"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Easy">E</span></div><a name="b2"
+                                       class="pattern-anchor"></a>B2
+                                 </h4>
+                                 <ul id="patterns_steps_b2">
+                                    <li class="cursor-pointer" style="opacity: 1;">If a number is touching the same
+                                       number
+                                       of flags,</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">then all adjacent cells can be
+                                       opened.
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-1" class="help-pattern-image"><img src="/4.png"
+                                    class="cursor-pointer" alt="1-1 (4)" style="width: 138px; height: 120px;">
+                                 <div id="patterns_dots_1-1" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-1" href="#1-1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-1"
+                                       class="pattern-anchor"></a>1-1
+                                 </h4>
+                                 <ul id="patterns_steps_1-1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the left <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the right <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the two yellow cells,
+                                       so
+                                       it already has a mine and the third cell can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-1p" class="help-pattern-image"><img src="/help/1-1p/4.png"
+                                    class="cursor-pointer" alt="1-1p (4)" style="width: 144px; height: 120px;">
+                                 <div id="patterns_dots_1-1p" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-1p" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-1p" href="#1-1p"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-1p"
+                                       class="pattern-anchor"></a>1-1+
+                                 </h4>
+                                 <ul id="patterns_steps_1-1p">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the left <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the right <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the two yellow cells,
+                                       so
+                                       it already has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2" class="help-pattern-image"><img src="/help/1-2/4.png"
+                                    class="cursor-pointer" alt="1-2 (4)" style="width: 138px; height: 120px;">
+                                 <div id="patterns_dots_1-2" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2" href="#1-2"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-2"
+                                       class="pattern-anchor"></a>1-2
+                                 </h4>
+                                 <ul id="patterns_steps_1-2">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Its first mine is in the yellow
+                                       cells,
+                                       therefore, the second mine is in the third cell.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2p" class="help-pattern-image"><img src="/help/1-2p/4.png"
+                                    class="cursor-pointer" alt="1-2p (4)" style="width: 144px; height: 120px;">
+                                 <div id="patterns_dots_1-2p" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2p" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2p" href="#1-2p"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-2p"
+                                       class="pattern-anchor"></a>1-2+
+                                 </h4>
+                                 <ul id="patterns_steps_1-2p">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num4">4</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the two yellow cells,
+                                       so
+                                       it already has one mine, therefore, as there are only three remaining cells, they
+                                       must be mines.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2c" class="help-pattern-image"><img src="/help/1-2c/4.png"
+                                    class="cursor-pointer" alt="1-2c (4)" style="width: 144px; height: 120px;">
+                                 <div id="patterns_dots_1-2c" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2c" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2c" href="#1-2c"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-2c"
+                                       class="pattern-anchor"></a>1-2C
+                                 </h4>
+                                 <div class="help-pattern-descr">Classic version of the <b>1-2</b> pattern:</div>
+                                 <ul id="patterns_steps_1-2c">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells, what can we
+                                       say about them?</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They can't both be mines, because
+                                       that
+                                       would overflow the <span class="help-num1">1</span>. They contain a maximum of
+                                       one
+                                       mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If the purple cells can't both be
+                                       mines,
+                                       then there must be a mine in the remaining third cell.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2cp" class="help-pattern-image"><img src="/help/1-2cp/4.png"
+                                    class="cursor-pointer" alt="1-2cp (4)" style="width: 144px; height: 120px;">
+                                 <div id="patterns_dots_1-2cp" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2cp" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2cp" href="#1-2cp"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-2cp"
+                                       class="pattern-anchor"></a>1-2C+
+                                 </h4>
+                                 <ul id="patterns_steps_1-2cp">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells, what can we
+                                       say about them?</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They can't both be mines, because
+                                       that
+                                       would overflow the <span class="help-num1">1</span>. They contain a maximum of
+                                       one
+                                       mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num4">4</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If the purple cells can't both be
+                                       mines,
+                                       then there must be three mines in the three remaining cells.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2-1" class="help-pattern-image"><img src="/help/1-2-1/3.png"
+                                    class="cursor-pointer" alt="1-2-1 (3)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_1-2-1" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2-1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2-1" href="#1-2-1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-2-1"
+                                       class="pattern-anchor"></a>1-2-1
+                                 </h4>
+                                 <div class="help-pattern-descr">The <span class="help-num1">1</span>-<span
+                                       class="help-num2">2</span>-<span class="help-num1">1</span> pattern has one
+                                    solution. Actually, it's just a combination of two <b>1-2</b> patterns:</div>
+                                 <ul id="patterns_steps_1-2-1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Apply the <b>1-2</b> pattern from the
+                                       left.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Apply the <b>1-2</b> from the right.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">And here's the final result.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2-2-1" class="help-pattern-image"><img
+                                    src="/help/1-2-2-1/3.png" class="cursor-pointer" alt="1-2-2-1 (3)"
+                                    style="width: 144px; height: 120px;">
+                                 <div id="patterns_dots_1-2-2-1" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2-2-1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2-2-1" href="#1-2-2-1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Medium">M</span></div><a name="1-2-2-1"
+                                       class="pattern-anchor"></a>1-2-2-1
+                                 </h4>
+                                 <div class="help-pattern-descr">The <span class="help-num1">1</span>-<span
+                                       class="help-num2">2</span>-<span class="help-num2">2</span>-<span
+                                       class="help-num1">1</span> pattern has one solution. It's also just a combination
+                                    of
+                                    two&nbsp;<b>1-2</b> patterns:</div>
+                                 <ul id="patterns_steps_1-2-2-1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Apply the <b>1-2</b> pattern from the
+                                       left.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Apply the <b>2-1</b> from the right.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">And here's the final result.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <h3>Reduction</h3>
+                     <table class="table table-bordered patterns-table">
+                        <tbody>
+                           <tr>
+                              <td id="patterns_img_1-1r" class="help-pattern-image"><img src="/help/1-1r/3.png"
+                                    class="cursor-pointer" alt="1-1r (3)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_1-1r" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-1r" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-1r" href="#1-1r"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Hard">H</span></div><a name="1-1r"
+                                       class="pattern-anchor"></a>1-1R
+                                 </h4>
+                                 <ul id="patterns_steps_1-1r">
+                                    <li class="cursor-pointer" style="opacity: 1;"><span class="help-num2">2</span>
+                                       turns
+                                       into <span class="help-num1">1</span>, since it already has one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;"><span class="help-num4">4</span> also
+                                       turns into <span class="help-num1">1</span>, since it already has three mines.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Therefore, <span
+                                          class="help-num2">2</span>-<span class="help-num4">4</span> turns into the
+                                       <b>1-1</b> pattern and the third cell can be opened.
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2r" class="help-pattern-image"><img src="/help/1-2r/3.png"
+                                    class="cursor-pointer" alt="1-2r (3)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_1-2r" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2r" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2r" href="#1-2r"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Hard">H</span></div><a name="1-2r"
+                                       class="pattern-anchor"></a>1-2R
+                                 </h4>
+                                 <ul id="patterns_steps_1-2r">
+                                    <li class="cursor-pointer" style="opacity: 1;"><span class="help-num2">2</span>
+                                       turns
+                                       into <span class="help-num1">1</span>, since it already has one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;"><span class="help-num3">3</span> also
+                                       turns into <span class="help-num2">2</span>, since it already has one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Therefore, <span
+                                          class="help-num2">2</span>-<span class="help-num3">3</span> turns into the
+                                       <b>1-2</b> pattern and there must be a mine in the third cell.
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1-2-1r" class="help-pattern-image"><img src="/help/1-2-1r/1.png"
+                                    class="cursor-pointer" alt="1-2-1r (1)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_1-2-1r" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-2-1r" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-2-1r" href="#1-2-1r"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Hard">H</span></div><a name="1-2-1r"
+                                       class="pattern-anchor"></a>1-2-1R
+                                 </h4>
+                                 <ul id="patterns_steps_1-2-1r">
+                                    <li class="cursor-pointer" style="opacity: 1;"><span
+                                          class="help-num2">2</span>-<span class="help-num3">3</span>-<span
+                                          class="help-num2">2</span> turns into the
+                                       <b>1-2-1</b> pattern.
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <h3>Holes</h3>
+                     <table class="table table-bordered patterns-table">
+                        <tbody>
+                           <tr>
+                              <td id="patterns_img_h1" class="help-pattern-image"><img src="/help/h1/4.png"
+                                    class="cursor-pointer" alt="h1 (4)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_h1" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_h1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_h1" href="#h1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Hard">H</span></div><a name="h1"
+                                       class="pattern-anchor"></a>H1
+                                 </h4>
+                                 <ul id="patterns_steps_h1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the bottom <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the top <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the two yellow cells,
+                                       so
+                                       it already has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_h2" class="help-pattern-image"><img src="/help/h2/4.png"
+                                    class="cursor-pointer" alt="h2 (4)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_h2" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_h2" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_h2" href="#h2"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Hard">H</span></div><a name="h2"
+                                       class="pattern-anchor"></a>H2
+                                 </h4>
+                                 <ul id="patterns_steps_h2">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the bottom <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the top <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the two yellow cells,
+                                       so
+                                       it already has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_h3" class="help-pattern-image"><img src="/help/h3/4.png"
+                                    class="cursor-pointer" alt="h3 (4)" style="width: 120px; height: 120px;">
+                                 <div id="patterns_dots_h3" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_h3" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_h3" href="#h3"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Hard">H</span></div><a name="h3"
+                                       class="pattern-anchor"></a>H3
+                                 </h4>
+                                 <ul id="patterns_steps_h3">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the bottom <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the two yellow cells, so
+                                       they
+                                       contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the top <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the two yellow cells,
+                                       so
+                                       it already has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <h3>Triangles</h3>
+                     <table class="table table-bordered patterns-table">
+                        <tbody>
+                           <tr>
+                              <td id="patterns_img_t1" class="help-pattern-image"><img src="/help/t1/4.png"
+                                    class="cursor-pointer" alt="t1 (4)" style="width: 120px; height: 144px;">
+                                 <div id="patterns_dots_t1" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_t1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_t1" href="#t1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="t1"
+                                       class="pattern-anchor"></a>T1
+                                 </h4>
+                                 <ul id="patterns_steps_t1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the bottom <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It touches the three yellow cells, so
+                                       they contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the top <span
+                                          class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">It also touches the three yellow
+                                       cells,
+                                       so it already has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_t2" class="help-pattern-image"><img src="/help/t2/5.png"
+                                    class="cursor-pointer" alt="t2 (5)" style="width: 120px; height: 144px;">
+                                 <div id="patterns_dots_t2" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_t2" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_t2" href="#t2"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="t2"
+                                       class="pattern-anchor"></a>T2
+                                 </h4>
+                                 <ul id="patterns_steps_t2">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They contain a maximum of one mine,
+                                       because they touch <span class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If the purple cells contain a maximum
+                                       of
+                                       one mine, then there must be a mine in the remaining cell.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If you put the flag, you can see that
+                                       there is one mine in the purple cells. So <span class="help-num1">1</span>
+                                       already
+                                       has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_t3" class="help-pattern-image"><img src="/help/t3/5.png"
+                                    class="cursor-pointer" alt="t3 (5)" style="width: 120px; height: 144px;">
+                                 <div id="patterns_dots_t3" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_t3" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_t3" href="#t3"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="t3"
+                                       class="pattern-anchor"></a>T3
+                                 </h4>
+                                 <ul id="patterns_steps_t3">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They contain a maximum of two mines,
+                                       because they touch <span class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num3">3</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If the purple cells contain a maximum
+                                       of
+                                       two mines, then there must be a mine in the remaining cell.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If you put the flag, you can see that
+                                       there are two mines in the purple cells. So <span class="help-num2">2</span>
+                                       already
+                                       has mines and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_t4" class="help-pattern-image"><img src="/help/t4/5.png"
+                                    class="cursor-pointer" alt="t4 (5)" style="width: 120px; height: 168px;">
+                                 <div id="patterns_dots_t4" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_t4" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_t4" href="#t4"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="t4"
+                                       class="pattern-anchor"></a>T4
+                                 </h4>
+                                 <ul id="patterns_steps_t4">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They contain a maximum of two mines,
+                                       because they touch <span class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num4">4</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If the purple cells contain a maximum
+                                       of
+                                       two mines, then there must be two mines in the remaining cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If you put the flags, you can see
+                                       that
+                                       there are two mines in the purple cells. So <span class="help-num2">2</span>
+                                       already
+                                       has mines and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_t5" class="help-pattern-image"><img src="/help/t5/5.png"
+                                    class="cursor-pointer" alt="t5 (5)" style="width: 120px; height: 168px;">
+                                 <div id="patterns_dots_t5" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_t5" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_t5" href="#t5"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="t5"
+                                       class="pattern-anchor"></a>T5
+                                 </h4>
+                                 <ul id="patterns_steps_t5">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They contain a maximum of one mine,
+                                       because they touch <span class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If the purple cells contain a maximum
+                                       of
+                                       one mine, then there must be a mine in the remaining third cell.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If you put the flag, you can see that
+                                       there is one mine in the purple cells. So <span class="help-num1">1</span>
+                                       already
+                                       has a mine and all the remaining cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <h3>High complexity patterns</h3>
+                     <table class="table table-bordered patterns-table">
+                        <tbody>
+                           <tr>
+                              <td id="patterns_img_1-3-1" class="help-pattern-image"><img src="/help/1-3-1/7.png"
+                                    class="cursor-pointer" alt="1-3-1 (7)" style="width: 144px; height: 144px;">
+                                 <div id="patterns_dots_1-3-1" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1-3-1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1-3-1" href="#1-3-1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="1-3-1"
+                                       class="pattern-anchor"></a>1-3-1 corner
+                                 </h4>
+                                 <ul id="patterns_steps_1-3-1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They contain a maximum of one mine,
+                                       because they touch <span class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the orange cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They also contain a maximum of one
+                                       mine,
+                                       because they also touch <span class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num3">3</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The purple and orange cells contain a
+                                       maximum of two mines, so the third mine must be in the last corner cell.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;"><span class="help-num3">3</span> has
+                                       two
+                                       mines left. One of them must be in the purple cells, the other must be in the
+                                       orange
+                                       cells. Therefore, <b>1-3-1</b> corner has one solution.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_2-2-2" class="help-pattern-image"><img src="/help/2-2-2/7.png"
+                                    class="cursor-pointer" alt="2-2-2 (7)" style="width: 144px; height: 144px;">
+                                 <div id="patterns_dots_2-2-2" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_2-2-2" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_2-2-2" href="#2-2-2"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="2-2-2"
+                                       class="pattern-anchor"></a>2-2-2 corner
+                                 </h4>
+                                 <ul id="patterns_steps_2-2-2">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They can't both be empty, because
+                                       that
+                                       would overflow the <span class="help-num2">2</span>. So they contain a minimum of
+                                       one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the orange cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They also can't both be empty,
+                                       because
+                                       that would overflow the <span class="help-num2">2</span>. So they also contain a
+                                       minimum of one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the corner <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The purple and orange cells contain a
+                                       minimum of two mines, so <span class="help-num2">2</span> already has mines and
+                                       the
+                                       last corner cell can be opened.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The first mine must be in the purple
+                                       cells, and the second mine must be in the orange cells. Therefore, <b>2-2-2</b>
+                                       corner has one solution.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_1--2--1" class="help-pattern-image"><img
+                                    src="/help/1--2--1/6.png" class="cursor-pointer" alt="1--2--1 (6)"
+                                    style="width: 120px; height: 192px;">
+                                 <div id="patterns_dots_1--2--1" class="help-patterns-dots"><span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_1--2--1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_1--2--1" href="#1--2--1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="1--2--1"
+                                       class="pattern-anchor"></a>1&gt;2&lt;1
+                                 </h4>
+                                 <ul id="patterns_steps_1--2--1">
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the purple cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They contain a maximum of one mine,
+                                       because they touch <span class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the orange cells.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">They also contain a maximum of one
+                                       mine,
+                                       because they also touch <span class="help-num1">1</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The first mine must be in the purple
+                                       cells, and the second mine must be in the orange cells. Therefore, all the
+                                       remaining
+                                       cells can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_tp" class="help-pattern-image"><img src="/help/tp/6.png"
+                                    class="cursor-pointer" alt="tp (6)" style="width: 144px; height: 144px;">
+                                 <div id="patterns_dots_tp" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_tp" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_tp" href="#tp"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="tp"
+                                       class="pattern-anchor"></a>T-pattern
+                                 </h4>
+                                 <ul id="patterns_steps_tp">
+                                    <li class="cursor-pointer" style="opacity: 1;">The left <span
+                                          class="help-num1">1</span> touches the two yellow cells, so they contain one
+                                       mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The right <span
+                                          class="help-num1">1</span> touches the two purple cells, so they also contain
+                                       one
+                                       mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;"><span class="help-num2">2</span>
+                                       touches
+                                       the two purple cells, so the remaining orange cells also contain one mine.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now look at the <span
+                                          class="help-num3">3</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The yellow and orange cells contain a
+                                       maximum of two mines, so the third mine must be in the last corner cell.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the <span
+                                          class="help-num3">3</span> again. The first mine is in the corner, the second
+                                       mine is in the bottom cells, so the third mine is in the two remaining orange
+                                       cells.
+                                       Therefore, cells marked with green circles can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_dc" class="help-pattern-image"><img src="/11.png"
+                                    class="cursor-pointer" alt="dc (11)" style="width: 120px; height: 264px;">
+                                 <div id="patterns_dots_dc" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_dc" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_dc" href="#dc"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="dc"
+                                       class="pattern-anchor"></a>Dependency Chain
+                                 </h4>
+                                 <div class="help-pattern-descr">Usually long dependency chains can be resolved by
+                                    parsing
+                                    from both sides.</div>
+                                 <ul id="patterns_steps_dc">
+                                    <li class="cursor-pointer" style="opacity: 1;">First, let's start parsing from the
+                                       top.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the yellow cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the purple cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Now, let's start parsing from the
+                                       bottom.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the orange cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the red cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the white cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the brown cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the cyan cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Look at the green <span
+                                          class="help-num2">2</span>.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The first mine must be in the purple
+                                       cells, the second mine must be in the cyan cells. Therefore, cells marked with
+                                       green
+                                       circles can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <h3>Last turns</h3>
+                     <table class="table table-bordered patterns-table">
+                        <tbody>
+                           <tr>
+                              <td id="patterns_img_mc1" class="help-pattern-image"><img src="/6.png"
+                                    class="cursor-pointer" alt="mc1 (6)" style="width: 155px; height: 366px;">
+                                 <div id="patterns_dots_mc1" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_mc1" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_mc1" href="#mc1"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="mc1"
+                                       class="pattern-anchor"></a>Mine counting
+                                 </h4>
+                                 <div class="help-pattern-descr">When the game comes to an end, you can determine empty
+                                    cells by the number of remaining mines:</div>
+                                 <ul id="patterns_steps_mc1">
+                                    <li class="cursor-pointer" style="opacity: 1;">There are 2 mines in the yellow
+                                       cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the purple cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the orange cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the red cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">There is 1 mine in the brown cells.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">The colored cells contain 6 mines in
+                                       total, just as much as the number of remaining mines. Therefore, cells marked
+                                       with
+                                       green circles can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="patterns_img_ltc" class="help-pattern-image"><img src="/help/ltc/4.png"
+                                    class="cursor-pointer" alt="ltc (4)" style="width: 180px; height: 242px;">
+                                 <div id="patterns_dots_ltc" class="help-patterns-dots"><span class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-passed"></i></span>&nbsp;&nbsp;<span
+                                       class="cursor-pointer"><i
+                                          class="fa fa-circle help-patterns-dots-active"></i></span>&nbsp;&nbsp;</div>
+                              </td>
+                              <td id="patterns_text_ltc" class="help-pattern-text">
+                                 <h4>
+                                    <div class="pattern-ng-level"><a id="pattern_permalink_ltc" href="#ltc"
+                                          class="pattern-permalink no-underline" title=""
+                                          data-original-title="Permalink to this pattern"><i
+                                             class="fa fa-thumb-tack"></i></a>&nbsp;&nbsp;<span class="help" title=""
+                                          data-original-title="NG Level: Evil">E</span></div><a name="ltc"
+                                       class="pattern-anchor"></a>Combinations
+                                 </h4>
+                                 <div class="help-pattern-descr">In rare situations, it may be necessary to enumerate
+                                    possible combinations:</div>
+                                 <ul id="patterns_steps_ltc">
+                                    <li class="cursor-pointer" style="opacity: 1;">Choose an arbitrary cell. For
+                                       example,
+                                       the yellow cell.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Let's check if there can be a mine.
+                                    </li>
+                                    <li class="cursor-pointer" style="opacity: 1;">If there is a mine in the yellow
+                                       cell,
+                                       then for the final solution we need <b>6</b> flags. This combination is not
+                                       possible, because there are only <b>5</b> mines left.</li>
+                                    <li class="cursor-pointer" style="opacity: 1;">Therefore, the yellow cell cannot be
+                                       a
+                                       mine and can be opened.</li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <%- include('../layout_main_down.ejs',{mode:-1}); %>

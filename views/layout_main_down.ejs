@@ -19,7 +19,7 @@
 <script src="/en-455.js"></script>
 <script src="/randoms.js"></script>
 <script>
-   const game_mode = <%-mode %>;
+   const game_mode = <%=mode %>;
    const cellSize = getCellSize(game_mode);
    const leftMineLED = document.getElementById('top_area_mines_100');
    const middleMineLED = document.getElementById('top_area_mines_10');
@@ -27,7 +27,6 @@
    const leftTimeLED = document.getElementById('top_area_time_100');
    const middleTimeLED = document.getElementById('top_area_time_10');
    const rightTimeLED = document.getElementById('top_area_time_1');
-   const today = new Date();
    const height = getHeightFromMode(game_mode);
    const width = getWidthFromMode(game_mode);
    const mines = getMinesFromMode(game_mode);
@@ -43,6 +42,7 @@
    var openedCells = 0;
    var roundTime = 0;
    var timeloop = null;
+   var checkedCells = [];
    face.addEventListener('mousedown', function (event) {
       if (event.which == 1) {
          face.className = 'top-area-face zoomable hd_top-area-face-lose hd_top-area-face-pressed';
@@ -80,113 +80,171 @@
    for (let index = 0; index < cells.length; index++) {
       const cell = cells.item(index);
       // LEFT MOUSE
-      cell.addEventListener('click', function (event) {
+      cell.addEventListener('mousedown', function (event) {
          if (isEnd == false) {
-            clicks++;
-            if (firstClick == true) {
-               timeloop = setInterval(timeConvert, 1000);
-               startTime = event.timeStamp;
-            }
-            if (!cell.className.includes('hd_flag')) {
-               const i = parseInt(cell.getAttribute('data-y'));
-               const j = parseInt(cell.getAttribute('data-x'));
-               // Click on opened cell
-               if (cell.className.includes('hd_opened')) {
-                  const aroundCells = getAroundCells(height, width, i, j);
-                  var flagCells = 0;
-                  aroundCells.forEach(aroundCell => {
-                     const cell = getCell(i + aroundCell[0], j + aroundCell[1]);
-                     if (cell.className.includes('hd_flag')) {
-                        flagCells++;
-                     }
-                  });
-                  if (flagCells == answerBoard[i][j]) {
-                     for (let index = 0; index < aroundCells.length; index++) {
-                        const aroundCell = aroundCells[index];
-                        const tmpI = i + aroundCell[0];
-                        const tmpJ = j + aroundCell[1];
-                        const tmpCell = getCell(tmpI, tmpJ);
-                        if (!tmpCell.className.includes('hd_flag')) {
-                           if (gameBoard[tmpI][tmpJ] == 1) {
-                              tmpCell.className = `cell ${cellSize} hd_opened hd_type10`;
-                              face.className = 'top-area-face zoomable hd_top-area-face-lose';
-                              isEnd = true;
-                              submit(false, game_mode, clicks, event.timeStamp - startTime);
-                              clearTimeout(timeloop);
-                              break;
-                           } else {
-                              openCell(gameBoard, answerBoard, tmpI, tmpJ, cellSize);
-                              isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
-                           }
+            if (event.which == 1) {
+               if (!cell.className.includes('hd_flag')) {
+                  if (cell.className.includes('hd_closed')) {
+                     cell.className = `cell ${cellSize} hd_closed hd_pressed`;
+                  } else {
+                     const i = parseInt(cell.getAttribute('data-y'));
+                     const j = parseInt(cell.getAttribute('data-x'));
+                     const aroundCells = getAroundCells(height, width, i, j);
+                     aroundCells.forEach(aroundCell => {
+                        const tmpCell = getCell(i + aroundCell[0], j + aroundCell[1]);
+                        if (!tmpCell.className.includes('hd_flag') && tmpCell.className.includes('hd_closed')) {
+                           tmpCell.className = `cell ${cellSize} hd_check`;
+                           checkedCells.push([i + aroundCell[0], j + aroundCell[1]]);
                         }
-                     }
-                     if (isWin) {
-                        isEnd = true;
-                        submit(true, game_mode, clicks, event.timeStamp - startTime);
-                     }
+                     })
                   }
                }
-               else {
-                  if (gameBoard[i][j] == 1) {
-                     if (firstClick == false) {
-                        cell.className = `cell ${cellSize} hd_opened hd_type10`;
-                        face.className = 'top-area-face zoomable hd_top-area-face-lose';
-                        isEnd = true;
-                        submit(false, game_mode, clicks, event.timeStamp - startTime);
-                        clearTimeout(timeloop);
+            } else if (event.which == 3) {
+               if (isEnd == false) {
+                  if (firstClick == true) {
+                     timeloop = setInterval(timeConvert, 1000);
+                  }
+                  if (!cell.className.includes('hd_opened')) {
+                     if (cell.className.includes('hd_flag')) {
+                        cell.className = `cell ${cellSize} hd_closed`;
+                        flags--;
                      }
                      else {
-                        while (true) {
-                           makeBoard(gameBoard, mines);
-                           if (gameBoard[i][j] == 0) {
-                              countMine(gameBoard, answerBoard);
-                              openCell(gameBoard, answerBoard, i, j, cellSize);
-                              break;
+                        cell.className = `cell ${cellSize} hd_flag`;
+                        flags++;
+                     }
+                     if (mineConvert(mines - flags) == false) {
+                        cell.className = (cell.className == `cell ${cellSize} hd_closed`) ? `cell ${cellSize} hd_flag` : `cell ${cellSize} hd_closed`;
+                     }
+                     firstClick = false;
+                  }
+                  clicks++;
+               }
+
+            }
+         }
+      })
+      cell.addEventListener('mouseup', function (event) {
+         if (event.which == 1) {
+            if (isEnd == false) {
+               for (let index = 0; index < checkedCells.length; index++) {
+                  const checkedCell = checkedCells[index];
+                  const tmpCell = getCell(checkedCell[0], checkedCell[1]);
+                  tmpCell.className = `cell ${cellSize} hd_closed`;
+               }
+               checkedCells = [];
+               clicks++;
+               if (firstClick == true) {
+                  timeloop = setInterval(timeConvert, 1000);
+                  startTime = event.timeStamp;
+               }
+               if (!cell.className.includes('hd_flag')) {
+                  const i = parseInt(cell.getAttribute('data-y'));
+                  const j = parseInt(cell.getAttribute('data-x'));
+                  // Click on opened cell
+                  if (cell.className.includes('hd_opened')) {
+                     const aroundCells = getAroundCells(height, width, i, j);
+                     var flagCells = 0;
+                     aroundCells.forEach(aroundCell => {
+                        const tmpCell = getCell(i + aroundCell[0], j + aroundCell[1]);
+                        if (tmpCell.className.includes('hd_flag')) {
+                           flagCells++;
+                        }
+                     });
+                     if (flagCells == answerBoard[i][j]) {
+                        for (let index = 0; index < aroundCells.length; index++) {
+                           const aroundCell = aroundCells[index];
+                           const tmpI = i + aroundCell[0];
+                           const tmpJ = j + aroundCell[1];
+                           const tmpCell = getCell(tmpI, tmpJ);
+                           if (!tmpCell.className.includes('hd_flag')) {
+                              if (gameBoard[tmpI][tmpJ] == 1) {
+                                 tmpCell.className = `cell ${cellSize} hd_opened hd_type11`;
+                                 face.className = 'top-area-face zoomable hd_top-area-face-lose';
+                                 isEnd = true;
+                                 submit(false, game_mode, clicks, event.timeStamp - startTime);
+                                 clearTimeout(timeloop);
+                                 break;
+                              } else {
+                                 openCell(gameBoard, answerBoard, tmpI, tmpJ, cellSize);
+                                 isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                              }
                            }
                         }
-                        iswin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
                         if (isWin) {
                            isEnd = true;
                            submit(true, game_mode, clicks, event.timeStamp - startTime);
                         }
                      }
-                  } else {
-                     openCell(gameBoard, answerBoard, i, j, cellSize);
-                     isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
-                     if (isWin) {
-                        isEnd = true;
-                        submit(true, game_mode, clicks, event.timeStamp - startTime);
-                     }
                   }
-                  firstClick = false;
+                  else {
+                     if (gameBoard[i][j] == 1) {
+                        if (firstClick == false) {
+                           cell.className = `cell ${cellSize} hd_opened hd_type11`;
+                           face.className = 'top-area-face zoomable hd_top-area-face-lose';
+                           isEnd = true;
+                           submit(false, game_mode, clicks, event.timeStamp - startTime);
+                           clearTimeout(timeloop);
+                        }
+                        else {
+                           while (true) {
+                              makeBoard(gameBoard, mines);
+                              if (gameBoard[i][j] == 0) {
+                                 countMine(gameBoard, answerBoard);
+                                 openCell(gameBoard, answerBoard, i, j, cellSize);
+                                 break;
+                              }
+                           }
+                           iswin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                           if (isWin) {
+                              isEnd = true;
+                              submit(true, game_mode, clicks, event.timeStamp - startTime);
+                           }
+                        }
+                     } else {
+                        openCell(gameBoard, answerBoard, i, j, cellSize);
+                        isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                        if (isWin) {
+                           isEnd = true;
+                           submit(true, game_mode, clicks, event.timeStamp - startTime);
+                        }
+                     }
+                     firstClick = false;
+                  }
                }
+            } else {
+               clearTimeout(timeloop);
             }
-         } else {
-            clearTimeout(timeloop);
          }
       });
-      // RIGHT MOUSE
       cell.addEventListener('contextmenu', function (event) {
          event.preventDefault();
-         if (isEnd == false) {
-            if (firstClick == true) {
-               timeloop = setInterval(timeConvert, 1000);
+      });
+      cell.addEventListener('mouseleave', function (event) {
+         for (let index = 0; index < checkedCells.length; index++) {
+            const checkedCell = checkedCells[index];
+            const tmpCell = getCell(checkedCell[0], checkedCell[1]);
+            tmpCell.className = `cell ${cellSize} hd_closed`;
+         }
+         checkedCells = [];
+      });
+      cell.addEventListener('mouseenter', function (event) {
+         if (event.buttons === 1) {
+            const i = parseInt(cell.getAttribute('data-y'));
+            const j = parseInt(cell.getAttribute('data-x'));
+            if (cell.className.includes('hd_opened')) {
+               const aroundCells = getAroundCells(height, width, i, j);
+               aroundCells.forEach(aroundCell => {
+                  const tmpCell = getCell(i + aroundCell[0], j + aroundCell[1]);
+                  if (!tmpCell.className.includes('hd_flag') && tmpCell.className.includes('hd_closed')) {
+                     tmpCell.className = `cell ${cellSize} hd_check`;
+                     checkedCells.push([i + aroundCell[0], j + aroundCell[1]]);
+                  }
+               })
+            } else if (cell.className.includes('hd_closed')) {
+               cell.className = `cell ${cellSize} hd_pressed`;
+               checkedCells.push([i, j]);
             }
-            if (!cell.className.includes('hd_opened')) {
-               if (cell.className.includes('hd_flag')) {
-                  cell.className = `cell ${cellSize} hd_closed`;
-                  flags--;
-               }
-               else {
-                  cell.className = `cell ${cellSize} hd_flag`;
-                  flags++;
-               }
-               if (mineConvert(mines - flags) == false) {
-                  cell.className = (cell.className == `cell ${cellSize} hd_closed`) ? `cell ${cellSize} hd_flag` : `cell ${cellSize} hd_closed`;
-               }
-               firstClick = false;
-            }
-            clicks++;
          }
       });
    }
