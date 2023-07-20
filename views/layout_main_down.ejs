@@ -162,6 +162,7 @@
                                  tmpCell.className = `cell ${cellSize} hd_opened hd_type11`;
                                  face.className = 'top-area-face zoomable hd_top-area-face-lose';
                                  isEnd = true;
+                                 showResult(false, cells, cellSize, tmpCell);
                                  submit(false, game_mode, clicks, event.timeStamp - startTime);
                                  clearTimeout(timeloop);
                                  break;
@@ -173,6 +174,7 @@
                         }
                         if (isWin) {
                            isEnd = true;
+                           showResult(true, cells, cellSize, cell);
                            submit(true, game_mode, clicks, event.timeStamp - startTime);
                         }
                      }
@@ -183,6 +185,7 @@
                            cell.className = `cell ${cellSize} hd_opened hd_type11`;
                            face.className = 'top-area-face zoomable hd_top-area-face-lose';
                            isEnd = true;
+                           showResult(false, cells, cellSize, cell);
                            submit(false, game_mode, clicks, event.timeStamp - startTime);
                            clearTimeout(timeloop);
                         }
@@ -198,6 +201,7 @@
                            iswin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
                            if (isWin) {
                               isEnd = true;
+                              showResult(true, cells, cellSize, cell);
                               submit(true, game_mode, clicks, event.timeStamp - startTime);
                            }
                         }
@@ -206,6 +210,7 @@
                         isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
                         if (isWin) {
                            isEnd = true;
+                           showResult(true, cells, cellSize, cell);
                            submit(true, game_mode, clicks, event.timeStamp - startTime);
                         }
                      }

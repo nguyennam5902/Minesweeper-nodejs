@@ -116,6 +116,30 @@ function makeNewBoard(height, width) {
    return matrix;
 }
 
+/**
+ * 
+ * @param {*} isWin 
+ * @param {HTMLCollectionOf<Element>} cells 
+ * @param {*} cellSize 
+ * @param {Element} clickCell 
+ */
+function showResult(isWin, cells, cellSize, clickCell) {
+   for (let showIndex = 0; showIndex < cells.length; showIndex++) {
+      const showCell = cells[showIndex];
+      if (showCell.getAttribute('id') != clickCell.getAttribute('id')) {
+         const i = parseInt(showCell.getAttribute('data-y'));
+         const j = parseInt(showCell.getAttribute('data-x'));
+         if (gameBoard[i][j] == 1) {
+            if (isWin == true) {
+               showCell.className = `cell ${cellSize} hd_closed hd_flag`;
+            } else {
+               showCell.className = `cell ${cellSize} hd_opened hd_type10`;
+            }
+         }
+      }
+   }
+}
+
 function submit(isWin, gameMode, clicks, playTime) {
    $.ajax({ url: '/data', type: 'POST', data: { 'game_mode': gameMode, 'is_win': isWin, 'time': Math.round(playTime) / 1000, 'clicks': clicks, 'date': getDateTime() }, success: function (data) { alert('Game info successfully saved!'); } });
 }
@@ -127,5 +151,6 @@ module.exports = {
    getDateTime,
    makeBoard,
    makeNewBoard,
+   showResult,
    submit
 };

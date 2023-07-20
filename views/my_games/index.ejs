@@ -1,4 +1,4 @@
-<%- include('../layout_main_up.ejs'); %>
+<%- include('../layout_main_up.ejs',{subtitle:'My games'}); %>
   <div class="page-block" id="M26" style="display: block;">
     <div class="pull-right">
       <span id="S32">
@@ -27,27 +27,14 @@
     </div>
     <div>
       <div id="levels_full" class="pull-left hidden-xs level-select">
-        <a href="/my-games/beginner/1" id="level_select_1"
-          class="level-select-link active"><span>Beginner</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/my-games/intermediate/1" id="level_select_2"
+        <a href="/my-games/beginner/1" id="beginner"
+          class="level-select-link"><span>Beginner</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/my-games/intermediate/1" id="intermediate"
           class="level-select-link"><span>Intermediate</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/my-games/expert/1" id="level_select_3"
+        <a href="/my-games/expert/1" id="expert"
           class="level-select-link"><span>Expert</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="javascript:void(0)" id="level_select_4"
+        <a href="javascript:void(0)" id="level_select_3"
           class="level-select-link"><span>Custom</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </div>
-      <div class="pull-left hidden-sm hidden-md hidden-lg level-select">
-        <div class="btn-group"><button type="button" class="btn btn-sm btn-default btn-level-select dropdown-toggle"
-            data-toggle="dropdown"><span>Beginner</span>&nbsp;<span class="caret"></span></button>
-          <ul id="levels_compact" class="dropdown-menu">
-            <li><a href="/my-games/beginner/1" id="level_select_1" class="level-select-link">Beginner</a>
-            </li>
-            <li><a href="/my-games/intermediate/1" id="level_select_2" class="level-select-link">Intermediate</a>
-            </li>
-            <li><a href="/my-games/expert/1" id="level_select_3" class="level-select-link">Expert</a></li>
-            <li><a href="javascript:void(0)" id="level_select_4" class="level-select-link">Custom</a></li>
-          </ul>
-        </div>
       </div>
       <div class="clearfix"></div>
     </div>
@@ -83,6 +70,11 @@
     </nav>
   </div>
   <script>
+    const url = window.location.pathname.split('/');
+    url.pop();
+    const mode = url.pop();
+    document.getElementById(mode).className = `level-select-link active`;
+
     document.getElementById('is_all_games').onclick = function () {
       const params = window.location.pathname.split('/');
       params.pop();

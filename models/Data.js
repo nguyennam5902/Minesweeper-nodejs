@@ -3,7 +3,7 @@ const database = require('../helper/database');
 const { Schema } = mongoose;
 
 const dataSchema = new Schema({
-   username: String,
+   user_id: mongoose.Schema.Types.ObjectId,
    game_mode: Number,
    is_win: Boolean,
    time: Number,

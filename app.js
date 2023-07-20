@@ -25,19 +25,13 @@ const cssText = fileController.readFile('./static/styles-455.css');
 var isCheck = false;
 
 app.get('/', (_req, res) => {
-   if (app.get(`username`) == null) {
-      res.redirect('/login');
-   } else {
-      res.render('index', {
-         // 'stylesheet': cssText,
-         'stylesheet': fileController.readFile('./static/styles-455.css'),
-         'mainContent': fileController.readFile('./views/index.html'),
-         'isLogin': isLogin,
-         'username': app.get('username'),
-         'subtitle': 'Welcome'
-      });
-
-   }
+   res.render('index', {
+      // 'stylesheet': cssText,
+      'stylesheet': fileController.readFile('./static/styles-455.css'),
+      'isLogin': isLogin,
+      'username': app.get('username'),
+      'subtitle': 'Welcome'
+   });
 });
 
 app.post('/all', (req, res) => {
@@ -45,7 +39,7 @@ app.post('/all', (req, res) => {
    const tmpCheck = utils.parseBoolean(req.body.isCheck);
    // console.log(`MODE:|${mode}`);
    isCheck = tmpCheck;
-})
+});
 
 app.get('/beginner', (_req, res) => {
    if (app.get(`username`) == null) {
@@ -61,6 +55,10 @@ app.get('/beginner', (_req, res) => {
    }
 });
 
+app.get('/custom', (req, res) => {
+   utils.apologyRender(res, app.get('username') != undefined, 400, "SORRY");
+})
+
 app.post('/data', async (req, res) => {
    const gameMode = req.body.game_mode;
    const isWin = utils.parseBoolean(req.body.is_win);
@@ -69,7 +67,7 @@ app.post('/data', async (req, res) => {
    const date = req.body.date;
    // console.log(`MODE:|${gameMode}\nWIN:|${isWin}\nTIME:|${time}\nCLICKS:|${clicks}\nDATE:|${date}`);
    Data.create({
-      'username': app.get('username'),
+      'user_id': app.get('user_id'),
       'clicks': clicks,
       'game_mode': gameMode,
       'is_win': isWin,
@@ -102,16 +100,28 @@ app.get('/expert', (_req, res) => {
          'subtitle': 'Expert'
       });
    }
-})
+});
 
-app.get('/help/gameplay', (req, res) => {
-   res.render('gameplay', {
+app.get('/game/:game_id', (req, res) => {
+   res.render('game', {
       'stylesheet': fileController.readFile('./static/styles-455.css'),
-      isLogin: app.get('username'),
+      isLogin: true,
       'username': app.get('username'),
-      'subtitle': 'Gameplay'
+      'subtitle': `Game ${req.params.game_id}`
    })
-})
+});
+
+app.get('/help/:route', (req, res) => {
+   const route = req.params.route;
+   res.render(`help/${route}`, {
+      'stylesheet': fileController.readFile('./static/styles-455.css'),
+      isLogin: isLogin,
+      'username': app.get('username'),
+      'subtitle': 'Gameplay',
+      'titles': config.HELP_TITLES,
+      'route': route
+   })
+});
 
 app.get('/intermediate', (_req, res) => {
    if (app.get(`username`) == null) {
@@ -130,7 +140,6 @@ app.get('/login', (_req, res) => {
    res.render('login', {
       // 'stylesheet': cssText,
       'stylesheet': fileController.readFile('./static/styles-455.css'),
-      'mainContent': fileController.readFile('./views/login.html'),
       'isLogin': false,
       'username': app.get('username')
    });
@@ -153,8 +162,8 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/logout', (_req, res) => {
-   app.set('username', null);
-   app.set('user_id', null);
+   app.set('username', undefined);
+   app.set('user_id', undefined);
    isLogin = false;
    res.redirect('/');
 });
@@ -171,8 +180,9 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
       // console.log(mode);
       // console.log(pageNum);
       // console.log(numMode);
+      console.log(app.get(`username`));
       const dataFilter = {
-         'username': app.get(`username`),
+         'user_id': app.get('user_id'),
          'game_mode': config.getNumMode(mode)
       };
       if (!isCheck) {
@@ -190,10 +200,11 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
             const arrIndex = pageNum - 1;
             for (let i = 0; i < Math.min(gamesNum - 10 * arrIndex, 10); i++) {
                const tmpIndex = 10 * arrIndex + i;
+               const game_id = games[tmpIndex].id;
                body = body + `
-         <tr id="game_row_2437559956">
+         <tr id="game_row_${game_id}">
             <td>${tmpIndex + 1}</td>
-            <td><a href="/game/2437559956"><span><span class="fa fa-caret-square-o-right game-play"></span>${games[tmpIndex].time}</span></a></td>
+            <td><a href="/game/${game_id}"><span><span class="fa fa-caret-square-o-right game-play"></span>${games[tmpIndex].time}</span></a></td>
             <td class="text-center"><span class="help" title="" data-original-title="Win"><i class="fa fa-${games[tmpIndex].is_win == true ? `check-circle text-success` : `times-circle text-danger`} icon-state icon-state-table"></i></span></td>
             <td>${games[tmpIndex].clicks}</td>
             <td class=""><span>${games[tmpIndex].date}</span></td>
@@ -203,7 +214,6 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
                'stylesheet': fileController.readFile('./static/styles-455.css'),
                'isLogin': true,
                'username': app.get('username'),
-               'subtitle': 'My games',
                'tableData': body,
                'isCheck': isCheck ? 'checked' : '',
                'mode': mode,
