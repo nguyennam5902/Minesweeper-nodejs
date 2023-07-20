@@ -13739,6 +13739,7 @@ a:hover.brand-link {
 
 @media (min-width:992px) {
    .main-content {
+      margin-left: -50px;
       padding: 20px 25px;
       box-shadow: 0 0 0 1px #e0e0e0;
       background-color: #fff;
