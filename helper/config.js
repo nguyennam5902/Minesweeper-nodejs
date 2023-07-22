@@ -9,19 +9,17 @@ const modeToNumMap = {};
 modeToNumMap[BEGINNER] = BEGINNER_MODE;
 modeToNumMap[INTERMEDIATE] = INTERMEDIATE_MODE;
 modeToNumMap[EXPERT] = EXPERT_MODE;
-const HELP_TITLES = [
-   'Gameplay',
-   'Patterns',
-   'Trophies',
-   'Arena',
-   'Gems',
-   'Equipment',
-   'Events',
-   'Achievements',
-   'Ranks',
-   'Guides',
-   'Website rules',
-]
+const HELP_TITLES = {
+   'gameplay': 'Gameplay',
+   'patterns': 'Patterns',
+   'trophies': 'Trophies',
+   'arena': 'Arena',
+   'equipment': 'Equipment',
+   'events': 'Events',
+   'achievements': 'Achievements',
+   'ranks': 'Ranks',
+   'website-rules': 'Website rules',
+}
 
 /**
  * Return mode index in config file

@@ -3,7 +3,7 @@ const database = require('../helper/database');
 const { Schema } = mongoose;
 
 const customSchema = new Schema({
-   username: String,
+   user_id: mongoose.Schema.Types.ObjectId,
    wins: { type: Number, default: 0 }
 }, {
    query: {

@@ -41,22 +41,24 @@ app.post('/all', (req, res) => {
    isCheck = tmpCheck;
 });
 
-app.get('/beginner', (_req, res) => {
+app.get('/beginner', async (_req, res) => {
    if (app.get(`username`) == null) {
       res.redirect('/login');
    } else {
+      const row = await Beginner.findOne({ 'user_id': app.get(`user_id`) }).exec();
       res.render('beginner', {
          // 'stylesheet': cssText,
          'stylesheet': fileController.readFile('./static/styles-455.css'),
          isLogin: true,
          'username': app.get('username'),
-         'subtitle': "Beginner"
+         'subtitle': "Beginner",
+         'cur_ws': row.current_ws,
       });
    }
 });
 
 app.get('/custom', (req, res) => {
-   utils.apologyRender(res, app.get('username') != undefined, 400, "SORRY");
+   utils.apologyRender(res, app.get('username'), app.get('username') != undefined, 400, "SORRY");
 })
 
 app.post('/data', async (req, res) => {
@@ -74,7 +76,7 @@ app.post('/data', async (req, res) => {
       'time': time,
       'date': date
    });
-   const result = await modeMap[gameMode].findOne().byUsername(app.get(`username`)).exec();
+   const result = await modeMap[gameMode].findOne({ 'user_id': app.get('user_id') }).exec();
    if (isWin == true) {
       // console.log("WIN");
       result.wins++;
@@ -88,16 +90,17 @@ app.post('/data', async (req, res) => {
    await result.save();
 });
 
-app.get('/expert', (_req, res) => {
+app.get('/expert', async (_req, res) => {
    if (app.get(`username`) == null) {
       res.redirect('/login');
    } else {
+      const row = await Expert.findOne({ 'user_id': app.get(`user_id`) }).exec();
       res.render('expert', {
          // 'stylesheet': cssText,
          'stylesheet': fileController.readFile('./static/styles-455.css'),
          isLogin: true,
          'username': app.get('username'),
-         'subtitle': 'Expert'
+         'cur_ws': row.current_ws,
       });
    }
 });
@@ -117,21 +120,23 @@ app.get('/help/:route', (req, res) => {
       'stylesheet': fileController.readFile('./static/styles-455.css'),
       isLogin: isLogin,
       'username': app.get('username'),
-      'subtitle': 'Gameplay',
-      'titles': config.HELP_TITLES,
+      'subtitle': route,
+      'titles': Object.values(config.HELP_TITLES),
       'route': route
    })
 });
 
-app.get('/intermediate', (_req, res) => {
+app.get('/intermediate', async (_req, res) => {
    if (app.get(`username`) == null) {
       res.redirect('/login');
    } else {
+      const row = await Intermediate.findOne({ 'user_id': app.get(`user_id`) }).exec();
       res.render('intermediate', {
          // 'stylesheet': cssText,
          'stylesheet': fileController.readFile('./static/styles-455.css'),
          isLogin: true,
-         'username': app.get('username')
+         'username': app.get('username'),
+         'cur_ws': row.current_ws
       });
    }
 })
@@ -145,10 +150,10 @@ app.get('/login', (_req, res) => {
    });
 });
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
    const username = req.body.username;
    const password = req.body.password;
-   Account.findOne().byAccount(username, password).exec((_err, account) => {
+   Account.findOne().byAccount(username, password).exec(async (_err, account) => {
       if (account != null) {
          isLogin = true;
          app.set('username', username);
@@ -180,7 +185,7 @@ app.get('/my-games/:mode/:pageID', (request, res) => {
       // console.log(mode);
       // console.log(pageNum);
       // console.log(numMode);
-      console.log(app.get(`username`));
+      // console.log(app.get(`username`));
       const dataFilter = {
          'user_id': app.get('user_id'),
          'game_mode': config.getNumMode(mode)
@@ -256,14 +261,17 @@ app.post('/register', (_req, res) => {
    const repeatPassword = _req.body.repeatPassword;
    Account.findOne().byUsername(username).exec((_err, acc) => {
       if (acc == null) {
-         Account.create({ 'username': username, 'password': password });
-         Beginner.create({ 'username': username });
-         Intermediate.create({ 'username': username });
-         Expert.create({ 'username': username });
-         Custom.create({ 'username': username });
+         Account.create({ 'username': username, 'password': password }).then(newAcc => {
+            console.log("REGISTER");
+            Beginner.create({ 'user_id': newAcc.id });
+            Intermediate.create({ 'user_id': newAcc.id });
+            Expert.create({ 'user_id': newAcc.id });
+            Custom.create({ 'user_id': newAcc.id });
+            // console.log(newAcc);
+         });
          res.redirect('/');
       } else {
-         res.redirect('/register');
+         utils.apologyRender(res, false, 400, `user existed! please choose another username`)
       }
    });
 });

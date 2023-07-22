@@ -19,22 +19,24 @@
 <script src="/en-455.js"></script>
 <script src="/randoms.js"></script>
 <script>
-   const game_mode = <%=mode %>;
-   const cellSize = getCellSize(game_mode);
+   const gameMode = <%=mode%>;
+   const cellSize = getCellSize(gameMode);
    const leftMineLED = document.getElementById('top_area_mines_100');
    const middleMineLED = document.getElementById('top_area_mines_10');
    const rightMineLED = document.getElementById('top_area_mines_1');
    const leftTimeLED = document.getElementById('top_area_time_100');
    const middleTimeLED = document.getElementById('top_area_time_10');
    const rightTimeLED = document.getElementById('top_area_time_1');
-   const height = getHeightFromMode(game_mode);
-   const width = getWidthFromMode(game_mode);
-   const mines = getMinesFromMode(game_mode);
+   const height = getHeightFromMode(gameMode);
+   const width = getWidthFromMode(gameMode);
+   const mines = getMinesFromMode(gameMode);
+   mineConvert(mines);
    const gameBoard = makeNewBoard(height, width);
    const answerBoard = makeNewBoard(height, width);
    const face = document.getElementById('top_area_face');
    const cells = document.getElementsByClassName('wrapper-table')[0].getElementsByClassName('cell');
    var clicks = 0;
+   var currrentWs = <%=cur_ws%>;
    var firstClick = true;
    var flags = 0;
    var isEnd = false;
@@ -62,7 +64,7 @@
          middleTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num0';
          rightTimeLED.className = 'top-area-num pull-left zoomable hd_top-area-num0';
          document.getElementsByClassName('result-block').item(0).className = 'result-block hide';
-         mineConvert(10);
+         mineConvert(mines);
          clearInterval(timeloop);
          face.className = 'top-area-face zoomable hd_top-area-face-unpressed';
          for (let i = 0; i < cells.length; i++) {
@@ -74,6 +76,16 @@
          event.preventDefault();
       }
    });
+   face.addEventListener('mouseleave', function (event) {
+      if (isEnd == false)
+         face.className = 'top-area-face zoomable hd_top-area-face-unpressed';
+   });
+   face.addEventListener('mouseenter', (event) => {
+      if (isEnd == false)
+         if (event.buttons === 1) {
+            face.className = 'top-area-face zoomable hd_top-area-face-lose hd_top-area-face-pressed';
+         }
+   })
    makeBoard(gameBoard, mines);
    countMine(gameBoard, answerBoard);
    var startTime;
@@ -124,7 +136,7 @@
             }
          }
       })
-      cell.addEventListener('mouseup', function (event) {
+      cell.addEventListener('mouseup', async function (event) {
          if (event.which == 1) {
             if (isEnd == false) {
                for (let index = 0; index < checkedCells.length; index++) {
@@ -162,34 +174,39 @@
                                  tmpCell.className = `cell ${cellSize} hd_opened hd_type11`;
                                  face.className = 'top-area-face zoomable hd_top-area-face-lose';
                                  isEnd = true;
+                                 currrentWs = await updateStreak(currrentWs, false);
                                  showResult(false, cells, cellSize, tmpCell);
-                                 submit(false, game_mode, clicks, event.timeStamp - startTime);
+                                 submit(false, gameMode, clicks, event.timeStamp - startTime);
                                  clearTimeout(timeloop);
                                  break;
                               } else {
                                  openCell(gameBoard, answerBoard, tmpI, tmpJ, cellSize);
-                                 isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                                 isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, currrentWs, timeloop);
+                                 if (isWin) break;
                               }
                            }
                         }
                         if (isWin) {
                            isEnd = true;
+                           currrentWs = await updateStreak(currrentWs, true);
                            showResult(true, cells, cellSize, cell);
-                           submit(true, game_mode, clicks, event.timeStamp - startTime);
+                           submit(true, gameMode, clicks, event.timeStamp - startTime);
                         }
                      }
                   }
-                  else {
-                     if (gameBoard[i][j] == 1) {
-                        if (firstClick == false) {
+                  else {// Click on new cell
+                     if (gameBoard[i][j] == 1) {//If click on bomb
+                        if (firstClick == false) {//Not first click
                            cell.className = `cell ${cellSize} hd_opened hd_type11`;
                            face.className = 'top-area-face zoomable hd_top-area-face-lose';
                            isEnd = true;
+                           currrentWs = updateStreak(currrentWs, false);
                            showResult(false, cells, cellSize, cell);
-                           submit(false, game_mode, clicks, event.timeStamp - startTime);
+                           submit(false, gameMode, clicks, event.timeStamp - startTime);
                            clearTimeout(timeloop);
                         }
-                        else {
+                        else {//First click
+                           // Make new board
                            while (true) {
                               makeBoard(gameBoard, mines);
                               if (gameBoard[i][j] == 0) {
@@ -198,20 +215,22 @@
                                  break;
                               }
                            }
-                           iswin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                           iswin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, currrentWs, timeloop);
                            if (isWin) {
                               isEnd = true;
+                              currrentWs = await updateStreak(currrentWs, true);
                               showResult(true, cells, cellSize, cell);
-                              submit(true, game_mode, clicks, event.timeStamp - startTime);
+                              submit(true, gameMode, clicks, event.timeStamp - startTime);
                            }
                         }
                      } else {
                         openCell(gameBoard, answerBoard, i, j, cellSize);
-                        isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, timeloop);
+                        isWin = checkWin(cells, height * width - mines, face, isEnd, clicks, event.timeStamp - startTime, currrentWs, timeloop);
                         if (isWin) {
                            isEnd = true;
+                           currrentWs = await updateStreak(currrentWs, true);
                            showResult(true, cells, cellSize, cell);
-                           submit(true, game_mode, clicks, event.timeStamp - startTime);
+                           submit(true, gameMode, clicks, event.timeStamp - startTime);
                         }
                      }
                      firstClick = false;

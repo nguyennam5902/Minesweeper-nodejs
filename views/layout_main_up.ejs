@@ -156,93 +156,101 @@
       <div class="container">
          <div class="main-content">
             <div>
-               <div class="pull-left left-column hidden-xs hidden-sm">
-                  <div class="sidebar-nav">
-                     <!-- LEFT BAR -->
-                     <ul>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/beginner"
-                              class="menu-link link_new_game"><span>Beginner</span></a>
-                        </li>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/intermediate"
-                              class="menu-link link_new_game_ng"><span>Intermediate</span></a>
-                        </li>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/expert"
-                              class="menu-link link_new_game_ng"><span>Expert</span></a>
-                        </li>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/custom"
-                              class="menu-link link_new_game_ng"><span>Custom</span></a>
-                        </li>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/ranking"
-                              class="menu-link link_ranking link_ranking_ng"><span>Ranking</span></a>
-                        </li>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/my-games/beginner/1"
-                              class="menu-link link_my_games link_my_games_ng"><span>My games</span></a>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-success"></i><a href="/best-players"
-                              class="menu-link link_best_players"><span>Best
-                                 players</span></a>
-                        </li>
-                        <li>
-                           <i class="fa fa-angle-double-right sub-nav-angle text-success"></i><a href="/season-leaders"
-                              class="menu-link link_season_leaders"><span>Season
-                                 leaders</span></a>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/quests"
-                              class="menu-link link_quests"><span>Quests <span
-                                    class="menu_quests_count">(9)</span></span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
-                              href="/arena"><span>Arena</span></a><span class="menu_arena_new"></span>
-                        </li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/equipment"
-                              class="menu-link link_equipment"><span>Equipment</span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/marketplace"
-                              class="menu-link link_market"><span>Marketplace<span class="menu_market_new"></span><span
-                                    class="menu_exchange_not_viewed"></span></span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/events"
-                              class="menu-link link_events"><span>Events</span><span class="menu_events_new"></span></a>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/players-online"
-                              class="menu-link link_players_online"><span>Players
-                                 online</span><span class="menu_players_online">
-                                 (979)</span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/news"
-                              class="menu-link link_news"><span>News</span></a>
-                        </li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/statistics"
-                              class="menu-link link_statistics"><span>Statistics</span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/player/3477102"
-                              class="menu-link profile-link link_my_profile"><span>My profile</span></a></li>
-                     </ul>
-                     <ul>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/chat"
-                              class="menu-link link_chat"><span>Chat <span
-                                    class="menu_chat_count">(100+)</span></span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/help/gameplay"
-                              class="menu-link link_help"><span>Help</span></a>
-                        </li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/premium"
-                              class="menu-link link_premium"><span>Premium
-                                 account</span></a></li>
-                        <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/shop"
-                              class="menu-link link_shop"><span>Shop<span class="new_shop_mark"></span></span></a></li>
-                     </ul>
+               <% if (isLogin==true) {%>
+                  <div class="pull-left left-column hidden-xs hidden-sm">
+                     <div class="sidebar-nav">
+                        <!-- LEFT BAR -->
+                        <ul>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/beginner"
+                                 class="menu-link link_new_game"><span>Beginner</span></a>
+                           </li>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/intermediate"
+                                 class="menu-link link_new_game_ng"><span>Intermediate</span></a>
+                           </li>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/expert"
+                                 class="menu-link link_new_game_ng"><span>Expert</span></a>
+                           </li>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/custom"
+                                 class="menu-link link_new_game_ng"><span>Custom</span></a>
+                           </li>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a href="/ranking"
+                                 class="menu-link link_ranking link_ranking_ng"><span>Ranking</span></a>
+                           </li>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-primary"></i><a
+                                 href="/my-games/beginner/1" class="menu-link link_my_games link_my_games_ng"><span>My
+                                    games</span></a>
+                           </li>
+                        </ul>
+                        <ul>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-success"></i><a href="/best-players"
+                                 class="menu-link link_best_players"><span>Best
+                                    players</span></a>
+                           </li>
+                           <li>
+                              <i class="fa fa-angle-double-right sub-nav-angle text-success"></i><a
+                                 href="/season-leaders" class="menu-link link_season_leaders"><span>Season
+                                    leaders</span></a>
+                           </li>
+                        </ul>
+                        <ul>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/quests"
+                                 class="menu-link link_quests"><span>Quests <span
+                                       class="menu_quests_count">(9)</span></span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a
+                                 href="/arena"><span>Arena</span></a><span class="menu_arena_new"></span>
+                           </li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/equipment"
+                                 class="menu-link link_equipment"><span>Equipment</span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/marketplace"
+                                 class="menu-link link_market"><span>Marketplace<span
+                                       class="menu_market_new"></span><span
+                                       class="menu_exchange_not_viewed"></span></span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle text-danger"></i><a href="/events"
+                                 class="menu-link link_events"><span>Events</span><span
+                                    class="menu_events_new"></span></a>
+                           </li>
+                        </ul>
+                        <ul>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/players-online"
+                                 class="menu-link link_players_online"><span>Players
+                                    online</span><span class="menu_players_online">
+                                    (979)</span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/news"
+                                 class="menu-link link_news"><span>News</span></a>
+                           </li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/statistics"
+                                 class="menu-link link_statistics"><span>Statistics</span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/player/3477102"
+                                 class="menu-link profile-link link_my_profile"><span>My profile</span></a></li>
+                        </ul>
+                        <ul>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/chat"
+                                 class="menu-link link_chat"><span>Chat <span
+                                       class="menu_chat_count">(100+)</span></span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/help/gameplay"
+                                 class="menu-link link_help"><span>Help</span></a>
+                           </li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/premium"
+                                 class="menu-link link_premium"><span>Premium
+                                    account</span></a></li>
+                           <li><i class="fa fa-angle-double-right sub-nav-angle"></i><a href="/shop"
+                                 class="menu-link link_shop"><span>Shop<span class="new_shop_mark"></span></span></a>
+                           </li>
+                        </ul>
+                     </div>
                   </div>
-               </div>
-               <div class="pull-left main-column">
-                  <div id="main_page" class="main-page">
-                     <div id="homepage">
-                        <!-- MAIN CONTENT -->
-                        <!-- END MAIN CONTENT -->
+                  <%}%>
+                     <div class="pull-left main-column" <% if (isLogin==false) {%>
+                        style="box-shadow: 0px 0 0 0">
+                        <%}%>
+                           <div id="main_page" class="main-page">
+                              <div id="homepage">
+                                 <!-- MAIN CONTENT -->
+                                 <!-- END MAIN CONTENT -->

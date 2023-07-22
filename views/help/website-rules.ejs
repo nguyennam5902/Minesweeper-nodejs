@@ -1,0 +1,46 @@
+<%- include('../layout_main_up.ejs'); %>
+   <div class="page-block" id="H22" style="display: block;">
+      <h1><i class="fa fa-book"></i> Website rules</h1>
+      <hr>
+      <table class="help-table">
+         <tbody>
+            <tr>
+               <%-include('left');%>
+               <td class="help-table-middle-column hidden-xs help-menu"></td>
+               <td id="help_content" class="help-table-right-column help-content">
+                  <h3>Game rules</h3>
+                  <p>It is cheating to:</p>
+                  <ul>
+                     <li>Use any program that can perform clicks on a board or help to solve the game (eg. macro,
+                        autoclicker, board analyzer).</li>
+                     <li>Use unfair prior knowledge about the board.</li>
+                     <li>Manipulate the connection to the site in any way to gain an advantage.</li>
+                  </ul>
+                  <h3>Chat rules</h3>
+                  <p>Please be respectful to others in the chat, and use the appropriate language for each chat. Do not:
+                  </p>
+                  <ul>
+                     <li>Spam.</li>
+                     <li>Insult others.</li>
+                     <li>Swear excessively.</li>
+                     <li>Use ALL CAPS.</li>
+                     <li>Beg. This includes asking for free stuff, or for players to sell items below market price.</li>
+                     <li>Evade chat bans (using other methods to communicate in chat after being banned).</li>
+                  </ul>
+                  <h3>Other rules</h3>
+                  <ul>
+                     <li>One account per player.</li>
+                     <li>Equipment cannot be shared between multiple accounts.</li>
+                     <li>Don't offer unfair exchanges.</li>
+                     <li>It is prohibited to sell resources for real life money.</li>
+                     <li>No offensive usernames.</li>
+                  </ul>
+                  <br>
+                  <p>This list is not exhaustive. Game masters reserve the right to use their own discretion regardless
+                     of any rule.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <%- include('../layout_main_down.ejs',{mode:1}); %>

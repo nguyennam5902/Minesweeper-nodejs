@@ -35,13 +35,15 @@ function escape(s) {
  * @param {number} top Error code
  * @param {string} bottom Error message
  */
-function apologyRender(res, isLogin, top, bottom) {
+function apologyRender(res, username, isLogin, top, bottom) {
    bottom = escape(bottom);
    res.render('apology', {
       'stylesheet': fileController.readFile('./static/styles-455.css'),
+      'username': username,
       'isLogin': isLogin,
       'top': top,
-      'bottom': bottom
+      'bottom': bottom,
+      'cur_ws': -1
    });
 }
 

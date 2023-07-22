@@ -3,7 +3,7 @@ const database = require('../helper/database');
 const { Schema } = mongoose;
 
 const customDataSchema = new Schema({
-   username: String,
+   user_id: mongoose.Schema.Types.ObjectId,
    height: Number,
    width: Number,
    mines: Number,

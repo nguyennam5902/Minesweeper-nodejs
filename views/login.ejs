@@ -1,39 +1,39 @@
 <%- include('layout_main_up.ejs', {subtitle:'Login'}); %>
-<div>
-   <div class="text-center" style="margin-bottom: 25px;font-size: large;">
-      <strong>Sign in with username and password</strong>
+   <div>
+      <div class="text-center" style="margin-bottom: 25px;font-size: large;">
+         <strong>Sign in with username and password</strong>
+      </div>
+      <form action="/login" method="post">
+         <div class="form-group row">
+            <div class="col-12">
+               <label class="col-2 col-form-label">Username</label>
+               <input autofocus type="text" class="form-control" placeholder="enter your username" required="true"
+                  name="username">
+            </div>
+         </div>
+
+         <div class="form-group row">
+            <div class="col-12">
+               <label class="col-2 col-form-label">Password</label>
+               <input type="password" class="form-control" placeholder="enter your password" name="password"
+                  required="true">
+            </div>
+         </div>
+
+         <div class="form-group text-center row m-t-10">
+            <div class="col-12">
+               <button type="submit" class="btn btn-info auth-free">Log in</button>
+            </div>
+         </div>
+
+         <div class="form-group row m-t-30 mb-0">
+            <div class="col-12">
+               <a href="forgot-password.php" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
+                  password?</a>
+            </div>
+         </div>
+      </form>
+
+      <div class="clearfix"></div>
    </div>
-   <form action="/login" method="post">
-      <div class="form-group row">
-         <div class="col-12">
-            <label class="col-2 col-form-label">Username</label>
-            <input autofocus type="text" class="form-control" placeholder="enter your username"
-               required="true" name="username">
-         </div>
-      </div>
-
-      <div class="form-group row">
-         <div class="col-12">
-            <label class="col-2 col-form-label">Password</label>
-            <input type="password" class="form-control" placeholder="enter your password" name="password"
-               required="true">
-         </div>
-      </div>
-
-      <div class="form-group text-center row m-t-10">
-         <div class="col-12">
-            <button type="submit" class="btn btn-info auth-free">Log in</button>
-         </div>
-      </div>
-
-      <div class="form-group row m-t-30 mb-0">
-         <div class="col-12">
-            <a href="forgot-password.php" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your
-               password?</a>
-         </div>
-      </div>
-   </form>
-
-   <div class="clearfix"></div>
-</div>
-<%- include('layout_main_down.ejs',{mode:-1}); %>
+   <%- include('layout_main_down.ejs',{mode:-1,cur_ws:0}); %>

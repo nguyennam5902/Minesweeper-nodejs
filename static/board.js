@@ -8,17 +8,21 @@
  * @param {boolean} isEnd 
  * @param {number} clicks 
  * @param {number} endTime 
+ * @param {number} current_ws 
  * @param {any} timeloop 
  */
-function checkWin(cells, needOpen, face, isEnd, clicks, endTime, timeloop) {
+function checkWin(cells, needOpen, face, isEnd, clicks, endTime, current_ws, timeloop) {
    const openCells = getOpenCells(cells);
    if (openCells == needOpen) {
+      current_ws = updateStreak(current_ws, true);
+      console.log(`cur: ${current_ws}`)
       clearInterval(timeloop);
       face.className = 'top-area-face zoomable hd_top-area-face-win';
       isEnd = true;
       const playTime = Math.round(endTime) / 1000;
       document.getElementById('game_time').innerHTML = playTime;
       document.getElementById('clicks').innerHTML = clicks;
+      document.getElementById('cur_ws').innerHTML = current_ws;
       document.getElementsByClassName('result-block').item(0).className = 'result-block';
    }
    return openCells == needOpen;
@@ -144,6 +148,15 @@ function submit(isWin, gameMode, clicks, playTime) {
    $.ajax({ url: '/data', type: 'POST', data: { 'game_mode': gameMode, 'is_win': isWin, 'time': Math.round(playTime) / 1000, 'clicks': clicks, 'date': getDateTime() }, success: function (data) { alert('Game info successfully saved!'); } });
 }
 
+function updateStreak(currrentWs, isWin) {
+   if (isWin == true) {
+      currrentWs++;
+   } else {
+      currrentWs = 0;
+   }
+   return currrentWs;
+}
+
 module.exports = {
    checkWin,
    countMine,
@@ -152,5 +165,6 @@ module.exports = {
    makeBoard,
    makeNewBoard,
    showResult,
-   submit
+   submit,
+   updateStreak
 };
